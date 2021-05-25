@@ -68,17 +68,20 @@ public class LoginView {
 		int screen = 1;
 
 		if (app.mouseX > 105 && 635 > app.mouseX && app.mouseY > 635 && 673 > app.mouseY) {
-			//screen = 3;
+			// screen = 3;
 			boolean capturelogin = login();
 			if (capturelogin == true) {
+
 				screen = 3;
-			}else {
-				//lanzar excepción
+			} else {
+				// lanzar excepción
 				System.out.println("usuario no existe");
 			}
 		}
 		if (app.mouseX > 212 && 248 > app.mouseX && app.mouseY > 686 && 702 > app.mouseY) {
+
 			screen = 2;
+
 		}
 		return screen;
 	}
@@ -92,6 +95,21 @@ public class LoginView {
 		login = controllermain.login(email, password);
 		return login;
 
+	}
+
+	public void hideCp5() {
+		cp5.hide();
+
+	}
+
+	public void showCp5() {
+		cp5.show();
+
+	}
+
+	public void emptyTextfields() {
+		cp5.get(Textfield.class, "email").setText("");
+		cp5.get(Textfield.class, "password").setText("");
 	}
 
 }

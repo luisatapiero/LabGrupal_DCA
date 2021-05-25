@@ -36,12 +36,18 @@ public class Main extends PApplet {
 		switch (screen) {
 		case 1:
 			loginview.drawScreen();
+			loginview.showCp5();
+			signupview.hideCp5();
 			break;
 		case 2:
 			signupview.drawScreen();
+			loginview.hideCp5();
+			signupview.showCp5();
 			break;
 		case 3:
 			homeview.drawScreen();
+			loginview.hideCp5();
+			signupview.hideCp5();
 			break;
 			
 		default:
@@ -55,10 +61,12 @@ public class Main extends PApplet {
 		switch (screen) {
 		case 1:
 			screen = loginview.switchScreen();
+			signupview.emptyTextfields();
 			//System.out.println(screen);
 			break;
 		case 2:
 			screen = signupview.switchScreen();
+			loginview.emptyTextfields();
 			//System.out.println(screen);
 			break;
 		case 3:

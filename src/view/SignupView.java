@@ -1,6 +1,7 @@
 package view;
 
 import controlP5.ControlP5;
+import controlP5.Textfield;
 import controller.ControllerMain;
 import processing.core.PApplet;
 import processing.core.PFont;
@@ -29,8 +30,8 @@ public class SignupView {
 
 		signup_1 = app.loadImage("img/SignUp_1.png");
 		signup_2 = app.loadImage("img/SignUp_2.png");
-		montserrat = app.createFont("Fonts/Montserrat-Regular.ttf",14);
-		
+		montserrat = app.createFont("Fonts/Montserrat-Regular.ttf", 14);
+
 		// inicializar cp5 y textfields
 		cp5 = new ControlP5(app);
 		inputs = new String[6];
@@ -100,6 +101,25 @@ public class SignupView {
 		}
 
 		return screen;
+	}
+
+	public void hideCp5() {
+		cp5.hide();
+	}
+
+	public void showCp5() {
+		cp5.show();
+
+	}
+
+	public void emptyTextfields() {
+		cp5.get(Textfield.class, "name").setText("");
+		cp5.get(Textfield.class, "lastname").setText("");
+		cp5.get(Textfield.class, "city").setText("");
+		cp5.get(Textfield.class, "address").setText("");
+		cp5.get(Textfield.class, "email").setText("");
+		cp5.get(Textfield.class, "password").setText("");
+		
 	}
 
 }
