@@ -13,7 +13,6 @@ public class Main extends PApplet {
 		PApplet.main(Main.class.getName());
 		// TODO Auto-generated method stub
 
-		// Prueba de git
 		// Login completo
 	}
 

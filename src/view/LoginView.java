@@ -82,7 +82,7 @@ public class LoginView {
 
 			screen = 2;
 
-		}
+		} 
 		return screen;
 	}
 
