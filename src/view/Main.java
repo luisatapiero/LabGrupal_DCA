@@ -14,6 +14,7 @@ public class Main extends PApplet {
 		// TODO Auto-generated method stub
 
 		// Prueba de git
+		// Login completo
 	}
 
 	public void settings() {
