@@ -8,6 +8,7 @@ public class Main extends PApplet {
 	private LoginView loginview;
 	private SignupView signupview;
 	private HomeView homeview;
+	private DishView dishview;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -27,6 +28,7 @@ public class Main extends PApplet {
 		loginview = new LoginView(this);
 		signupview = new SignupView(this);
 		homeview = new HomeView(this);
+		dishview = new DishView(this);
 
 	}
 
@@ -41,13 +43,19 @@ public class Main extends PApplet {
 			break;
 		case 2:
 			signupview.drawScreen();
-			loginview.hideCp5();
-			signupview.showCp5();
+			loginview.hideCp5();    // Oculta un objeto pero no lo descarga.
+			signupview.showCp5();   //metodo para cuando este en un pantalla se muestre
 			break;
 		case 3:
 			homeview.drawScreen();
 			loginview.hideCp5();
 			signupview.hideCp5();
+			break;
+		case 4:
+			dishview.drawScreen();
+			loginview.hideCp5();
+			signupview.hideCp5();
+			
 			break;
 			
 		default:
@@ -73,7 +81,10 @@ public class Main extends PApplet {
 			screen = homeview.switchScreen();
 			//System.out.println(screen);
 			break;
-		
+		case 4:
+			screen = dishview.switchScreen();
+			//System.out.println(screen);
+			break;
 
 		default:
 			break;
