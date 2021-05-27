@@ -1,9 +1,9 @@
 package model;
 
-public class Dish {
+public class Order {
 
-	public Dish(String name, int price) {
+	public Order() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 }

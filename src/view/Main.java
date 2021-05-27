@@ -10,7 +10,7 @@ public class Main extends PApplet {
 	private SignupView signupview;
 	private HomeView homeview;
 	private DishView dishview;
-	private OlderView older;
+	private OrderView older;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -31,7 +31,7 @@ public class Main extends PApplet {
 		signupview = new SignupView(this);
 		homeview = new HomeView(this);
 		dishview = new DishView(this);
-		older = new OlderView(this);
+		older = new OrderView(this);
 		
 //	System.out.println(mouseX);	                     //para ver los valores de la posicion de los botones
 
