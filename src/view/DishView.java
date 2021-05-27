@@ -6,7 +6,7 @@ import processing.core.PImage;
 
 public class DishView {
 	private ControllerMain controllermain;
-	private PImage Dish;
+	private PImage Dish_1;
 	private PApplet app;
 
 	public DishView(PApplet app) {
@@ -14,13 +14,13 @@ public class DishView {
 		controllermain = new ControllerMain();
 		this.app = app;
 
-		Dish = app.loadImage("img/Dish.png");
+		Dish_1 = app.loadImage("img/Dish_1.png");
 	}
 
 	// método para pintar la pantalla de signup
 	public void drawScreen() {
 
-		app.image(Dish, 0, 0);
+		app.image(Dish_1, 0, 0);
 
 	}
 

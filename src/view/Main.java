@@ -56,8 +56,7 @@ public class Main extends PApplet {
 			break;
 		case 4:
 			dishview.drawScreen();
-			loginview.hideCp5();
-			signupview.hideCp5();
+			
 			
 			break;
 			
@@ -86,7 +85,7 @@ public class Main extends PApplet {
 			break;
 		case 4:
 			screen = dishview.switchScreen();
-			//System.out.println(screen);
+			System.out.println(screen);
 			break;
 
 		default:

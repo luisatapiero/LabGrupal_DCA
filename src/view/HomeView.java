@@ -8,63 +8,65 @@ import processing.core.PImage;
 
 public class HomeView {
 	private ControllerMain controllermain;
-	private PImage home;
+	private PImage home_1,home_2;
 	private PApplet app;
-	private ControlP5 cp5;
+
 
 	public HomeView(PApplet app) {
 		// TODO Auto-generated constructor stub
 		controllermain = new ControllerMain();
 		this.app = app;
 
-		home = app.loadImage("img/Home.png");
+		home_1 = app.loadImage("img/Home_1.png");
+		home_2 = app.loadImage("img/Home_2.png");
 		
-		// inicializar cp5 y textfields
-		cp5 = new ControlP5(app);
+		
 		
 		//button bangs de la primera opci�n
 		
-				cp5.addBang("buttonHamburgueseria")
-				.setPosition(34,124)
-				.setSize(282,146)
-				.setColorValue(app.color(255)).setColorActive(app.color(0, 0, 0, 1))
-				.setColorBackground(app.color(0, 0, 0, 1)).setColorForeground(app.color(0, 0, 0, 1))
-				.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
-				;
+		
 		
 	}
 
 	// método para pintar la pantalla 
 	public void drawScreen() {
 		
-		app.image(home, 0, 0);
+	
+		if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 146 && 282 > app.mouseY) {
+			app.image(home_2, 0, 0);
+
+		} else {
+			app.image(home_1, 0, 0);
+		}
+
 
 	}
 	// método para pasar de pantalla
 	public int switchScreen() {
-		int screen = 3;
+		int screen = 1;
 
-		buttonHamburgueseria();
-		
+		if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 146 && 282 > app.mouseY) {
+			// screen = 3;
+			boolean capturehome = home();
+			if (capturehome == true) {
+				screen = 4;
+			} 
+		}
+		if (app.mouseX > 212 && 248 > app.mouseX && app.mouseY > 686 && 702 > app.mouseY) {
+			screen = 3;
+
+		} 
 		return screen;
 	}
 	
-	
-	
-	
-	public void hideCp5() {
-		cp5.hide();
-
-	}
-
-	public void showCp5() {
-		cp5.show();
+	public boolean home() {
+		boolean home = false;
+		return home;
 
 	}
 	
-	public void buttonHamburgueseria() {                 
 	
-		int screen = 4;
-		System.out.println();
-	}
+	
+	
+	
 }
