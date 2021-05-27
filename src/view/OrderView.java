@@ -18,11 +18,23 @@ public class OrderView {
 	private PImage adic3b;
 	private PImage adic4;
 	private PImage adic4b;
+	private PImage acom1;
+	private PImage acom1b;
+	private PImage acom2;
+	private PImage acom2b;
+	private PImage acom3;
+	private PImage acom3b;
+	private PImage acom4;
+	private PImage acom4b;
 	private PApplet app;
 	private boolean pressAdic1;
 	private boolean pressAdic2;
 	private boolean pressAdic3;
 	private boolean pressAdic4;
+	private boolean pressAcom1;
+	private boolean pressAcom2;
+	private boolean pressAcom3;
+	private boolean pressAcom4;
 
 	
 	public OrderView(PApplet app) {
@@ -34,6 +46,10 @@ public class OrderView {
 		pressAdic2 = false;
 		pressAdic3 = false;
 		pressAdic4 = false;
+		pressAcom1 = false;
+		pressAcom2 = false;
+		pressAcom3 = false;
+		pressAcom4 = false;
 		
 		order1= app.loadImage("Img/Order1.png");
 		adic1 = app.loadImage("Img/buttons/Adic1.png");
@@ -47,6 +63,19 @@ public class OrderView {
 		
 		adic4 = app.loadImage("Img/buttons/Adic4.png");
 		adic4b = app.loadImage("Img/buttons/Adic4b.png");
+		
+		
+		acom1 = app.loadImage("Img/buttons/Acom1.png");
+		acom1b = app.loadImage("Img/buttons/Acom1b.png");
+		
+		acom2 = app.loadImage("Img/buttons/Acom2.png");
+		acom2b = app.loadImage("Img/buttons/Acom2b.png");
+		
+		acom3 = app.loadImage("Img/buttons/Acom3.png");
+		acom3b = app.loadImage("Img/buttons/Acom3b.png");
+		
+		acom4 = app.loadImage("Img/buttons/Acom4.png");
+		acom4b = app.loadImage("Img/buttons/Acom4b.png");
 		
 		
 	
@@ -79,6 +108,32 @@ public class OrderView {
 			}else{
 				app.image(adic4, 265, 454);
 			}
+			
+
+
+			if (pressAcom1) {
+				app.image(acom1b, 30, 583);
+			}else {
+				app.image(acom1, 30, 583);
+			}
+
+			if (pressAcom2) {
+				app.image(acom2b, 108, 583);
+			}else{
+				app.image(acom2, 108, 583);
+			}
+			
+			if (pressAcom3) {
+				app.image(acom3b, 187, 583);
+			}else{
+				app.image(acom3, 187, 583);
+			}
+			
+			if (pressAcom4) {
+				app.image(acom4b, 265, 583);
+			}else{
+				app.image(acom4, 265, 583);
+			}
 
 		
 	}
@@ -87,6 +142,7 @@ public class OrderView {
 	
 	public void pressButtons() {
 		pressAdditions();
+		pressAcom();
 		
 	}
 	
@@ -105,6 +161,24 @@ public class OrderView {
 		
 		if (app.mouseX > 265 && 328 > app.mouseX && app.mouseY > 454 && 520 > app.mouseY) {
 			pressAdic4 = !pressAdic4;
+		}
+	}
+	
+	private void pressAcom() {
+		if (app.mouseX > 30 && 93 > app.mouseX && app.mouseY > 583 && 649 > app.mouseY) {
+			pressAcom1 = !pressAcom1;
+		}
+		
+		if (app.mouseX > 108 && 171 > app.mouseX && app.mouseY > 583 && 649 > app.mouseY) {
+			pressAcom2 = !pressAcom2;
+		}
+		
+		if (app.mouseX > 187 && 250 > app.mouseX && app.mouseY > 583 && 649 > app.mouseY) {
+			pressAcom3 = !pressAcom3;
+		}
+		
+		if (app.mouseX > 265 && 328 > app.mouseX && app.mouseY > 583 && 649 > app.mouseY) {
+			pressAcom4 = !pressAcom4;
 		}
 	}
 	
