@@ -24,9 +24,11 @@ public class HomeView {
 		
 		//button bangs de la primera opción
 		
-				cp5.addBang("button")
-				.setPosition(240,240)
-				.setSize(80,40)
+				cp5.addBang("buttonHamburgueseria")
+				.setPosition(34,124)
+				.setSize(282,146)
+				.setColorValue(app.color(255)).setColorActive(app.color(0, 0, 0, 1))
+				.setColorBackground(app.color(0, 0, 0, 1)).setColorForeground(app.color(0, 0, 0, 1))
 				.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
 				;
 		
@@ -42,9 +44,8 @@ public class HomeView {
 	public int switchScreen() {
 		int screen = 3;
 
-		if (app.mouseX > 105 && 635 > app.mouseX && app.mouseY > 635 && 673 > app.mouseY) {
-			screen = 4;
-		}
+		buttonHamburgueseria();
+		
 		return screen;
 	}
 	
@@ -61,7 +62,9 @@ public class HomeView {
 
 	}
 	
-	public void button() {
-	//	System.out.println(cp5.get(Textfield.class,"name").getText());
+	public void buttonHamburgueseria() {                 
+	
+		int screen = 4;
+		System.out.println();
 	}
 }

@@ -31,7 +31,7 @@ public class Main extends PApplet {
 		homeview = new HomeView(this);
 		dishview = new DishView(this);
 		
-		
+	System.out.println(mouseX);	                     //para ver los valores de la posicion de los botones
 
 	}
 
