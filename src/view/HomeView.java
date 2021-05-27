@@ -28,7 +28,7 @@ public class HomeView {
 		
 	}
 
-	// método para pintar la pantalla 
+	// método para pintar la pantalla home
 	public void drawScreen() {
 		
 	
@@ -43,7 +43,7 @@ public class HomeView {
 	}
 	// método para pasar de pantalla
 	public int switchScreen() {
-		int screen = 1;
+		int screen = 4;
 
 		if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 146 && 282 > app.mouseY) {
 			// screen = 3;
@@ -51,11 +51,7 @@ public class HomeView {
 			if (capturehome == true) {
 				screen = 4;
 			} 
-		}
-		if (app.mouseX > 212 && 248 > app.mouseX && app.mouseY > 686 && 702 > app.mouseY) {
-			screen = 3;
-
-		} 
+		}	
 		return screen;
 	}
 	

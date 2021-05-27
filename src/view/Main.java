@@ -81,10 +81,12 @@ public class Main extends PApplet {
 			break;
 		case 3:
 			screen = homeview.switchScreen();
+			loginview.emptyTextfields();
 			//System.out.println(screen);
 			break;
 		case 4:
 			screen = dishview.switchScreen();
+			loginview.emptyTextfields();
 			System.out.println(screen);
 			break;
 
