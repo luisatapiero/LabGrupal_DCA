@@ -6,7 +6,7 @@ import processing.core.PImage;
 
 public class DishView {
 	private ControllerMain controllermain;
-	private PImage Dish_1;
+	private PImage dish_1,dish_2;
 	private PApplet app;
 
 	public DishView(PApplet app) {
@@ -14,20 +14,39 @@ public class DishView {
 		controllermain = new ControllerMain();
 		this.app = app;
 
-		Dish_1 = app.loadImage("img/Dish_1.png");
+		dish_1 = app.loadImage("img/Dish_1.png");
+		dish_2 = app.loadImage("img/Dish_2.png");
 	}
 
-	// método para pintar la pantalla de signup
+	// método para pintar la pantalla 
 	public void drawScreen() {
 
-		app.image(Dish_1, 0, 0);
+		if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 213 && 328 > app.mouseY) {
+			app.image(dish_2, 0, 0);
+
+		} else {
+			app.image(dish_1, 0, 0);
+		}
 
 	}
 
 	// método para pasar de pantalla
 	public int switchScreen() {
-		int screen = 4;
+		int screen = 5;
 
+		if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 146 && 282 > app.mouseY) {
+		
+			boolean capturedish = dish();
+			if (capturedish == true) {
+				screen = 5;
+			} 
+		}	
 		return screen;
+	}
+	
+	public boolean dish() {
+		boolean dish = false;
+		return dish;
+
 	}
 }

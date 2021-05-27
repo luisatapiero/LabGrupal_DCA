@@ -20,12 +20,6 @@ public class HomeView {
 		home_1 = app.loadImage("img/Home_1.png");
 		home_2 = app.loadImage("img/Home_2.png");
 		
-		
-		
-		//button bangs de la primera opción
-		
-		
-		
 	}
 
 	// mÃ©todo para pintar la pantalla home
@@ -46,7 +40,6 @@ public class HomeView {
 		int screen = 4;
 
 		if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 146 && 282 > app.mouseY) {
-			// screen = 3;
 			boolean capturehome = home();
 			if (capturehome == true) {
 				screen = 4;

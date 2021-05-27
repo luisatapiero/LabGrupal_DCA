@@ -10,6 +10,7 @@ public class Main extends PApplet {
 	private SignupView signupview;
 	private HomeView homeview;
 	private DishView dishview;
+	private OlderView older;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -30,8 +31,9 @@ public class Main extends PApplet {
 		signupview = new SignupView(this);
 		homeview = new HomeView(this);
 		dishview = new DishView(this);
+		older = new OlderView(this);
 		
-	System.out.println(mouseX);	                     //para ver los valores de la posicion de los botones
+//	System.out.println(mouseX);	                     //para ver los valores de la posicion de los botones
 
 	}
 
@@ -56,10 +58,10 @@ public class Main extends PApplet {
 			break;
 		case 4:
 			dishview.drawScreen();
-			
-			
 			break;
-			
+		case 5:
+			older.drawScreen();
+			break;
 		default:
 			break;
 		}
@@ -81,14 +83,11 @@ public class Main extends PApplet {
 			break;
 		case 3:
 			screen = homeview.switchScreen();
-			loginview.emptyTextfields();
-			//System.out.println(screen);
 			break;
 		case 4:
 			screen = dishview.switchScreen();
-			loginview.emptyTextfields();
-			System.out.println(screen);
 			break;
+		
 
 		default:
 			break;
