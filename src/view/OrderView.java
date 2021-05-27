@@ -10,6 +10,7 @@ public class OrderView {
 
 	private ControllerMain controllermain;
 	private PImage order1;
+	private PImage order2;
 	private PImage adic1;
 	private PImage adic1b;
 	private PImage adic2;
@@ -52,6 +53,7 @@ public class OrderView {
 		pressAcom4 = false;
 		
 		order1= app.loadImage("Img/Order1.png");
+		order2= app.loadImage("Img/Order2.png");
 		adic1 = app.loadImage("Img/buttons/Adic1.png");
 		adic1b = app.loadImage("Img/buttons/Adic1b.png");
 		
@@ -83,57 +85,15 @@ public class OrderView {
 	// método para pintar la pantalla 
 	public void drawScreen() {
 	
-			app.image(order1, 0, 0);
 			
-			if (pressAdic1) {
-				app.image(adic1b, 30, 454);
+			
+			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
+				app.image(order2, 0, 0);
 			}else {
-				app.image(adic1, 30, 454);
-			}
-
-			if (pressAdic2) {
-				app.image(adic2b, 108, 454);
-			}else{
-				app.image(adic2, 108, 454);
+				app.image(order1, 0, 0);
 			}
 			
-			if (pressAdic3) {
-				app.image(adic3b, 187, 454);
-			}else{
-				app.image(adic3, 187, 454);
-			}
-			
-			if (pressAdic4) {
-				app.image(adic4b, 265, 454);
-			}else{
-				app.image(adic4, 265, 454);
-			}
-			
-
-
-			if (pressAcom1) {
-				app.image(acom1b, 30, 583);
-			}else {
-				app.image(acom1, 30, 583);
-			}
-
-			if (pressAcom2) {
-				app.image(acom2b, 108, 583);
-			}else{
-				app.image(acom2, 108, 583);
-			}
-			
-			if (pressAcom3) {
-				app.image(acom3b, 187, 583);
-			}else{
-				app.image(acom3, 187, 583);
-			}
-			
-			if (pressAcom4) {
-				app.image(acom4b, 265, 583);
-			}else{
-				app.image(acom4, 265, 583);
-			}
+			changeButton();
 
 		
 	}
@@ -179,6 +139,58 @@ public class OrderView {
 		
 		if (app.mouseX > 265 && 328 > app.mouseX && app.mouseY > 583 && 649 > app.mouseY) {
 			pressAcom4 = !pressAcom4;
+		}
+	}
+	
+	private void changeButton() {
+		if (pressAdic1) {
+			app.image(adic1b, 30, 454);
+		}else {
+			app.image(adic1, 30, 454);
+		}
+
+		if (pressAdic2) {
+			app.image(adic2b, 108, 454);
+		}else{
+			app.image(adic2, 108, 454);
+		}
+		
+		if (pressAdic3) {
+			app.image(adic3b, 187, 454);
+		}else{
+			app.image(adic3, 187, 454);
+		}
+		
+		if (pressAdic4) {
+			app.image(adic4b, 265, 454);
+		}else{
+			app.image(adic4, 265, 454);
+		}
+		
+
+
+		if (pressAcom1) {
+			app.image(acom1b, 30, 583);
+		}else {
+			app.image(acom1, 30, 583);
+		}
+
+		if (pressAcom2) {
+			app.image(acom2b, 108, 583);
+		}else{
+			app.image(acom2, 108, 583);
+		}
+		
+		if (pressAcom3) {
+			app.image(acom3b, 187, 583);
+		}else{
+			app.image(acom3, 187, 583);
+		}
+		
+		if (pressAcom4) {
+			app.image(acom4b, 265, 583);
+		}else{
+			app.image(acom4, 265, 583);
 		}
 	}
 	
