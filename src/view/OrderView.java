@@ -113,7 +113,7 @@ public class OrderView {
 			break;
 			
 		case 9:
-			controllermain.cartInfo(screen);
+			//controllermain.cartInfo(screen);
 			//app.image(order4, 0, 0);
 			
 			break;

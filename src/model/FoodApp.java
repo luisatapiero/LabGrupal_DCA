@@ -45,61 +45,46 @@ public class FoodApp {
 	}
 
 	public void addCart(String name, int price, int screen) {
-		if (screen !=9) {
+		if (screen != 9) {
 			cart.add(new Dish(name, price));
-			System.out.println(cart.get(0).getName() + " " + cart.get(0).getPrice());
+			System.out.println(name + " " + price);
 			totalPrice += price;
-		}else {
+		} else {
 			processPayment(totalPrice, screen);
-			totalPrice=0;
+			totalPrice = 0;
 		}
-		
-			
-			
-			//System.out.println(totalPrice);
+
 	}
 
-	
-	
-
-	public void cartInfo(int screen) { //se supone que pinta la info en la canasta
+	public void cartInfo(int screen) { // se supone que pinta la info en la canasta
 		if (screen == 9) {
-			paintInfo = true;
-			//System.out.println(paintInfo);
-			paintCartinfo();
+
 			
-		}
-		
-	}
-
-	public void paintCartinfo() { //Hace el proceso de pintar
-		
-		//System.out.println(totalPrice);
-		if (paintInfo) {
-
-			for (int i = 0; i < cart.size(); i++) {
+			;
+			for (int j = 0; j < cart.size(); j++) {
 				System.out.println("pinta info");
 				app.fill(0);
-				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
-				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
+				app.text(cart.get(j).getName() + " " + cart.get(j).getPrice(), 30, j * 100 + 156);
+				app.text(cart.get(j).getName() + " " + cart.get(j).getPrice(), 30, j * 100 + 156);
+
 				
 			}
+			
+			// }
 		}
-	}
-	
 
-	public void processPayment(int totalPrice, int screen) { //cuando le da pagar se guarda la orden
-		
+	}
+
+	public void processPayment(int totalPrice, int screen) { // cuando le da pagar se guarda la orden
+
 		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY && screen == 9) {
-			//System.out.println(totalPrice);
-			//System.out.println("procesando pago");
+
 			id++;
 			history.add(new Order(id, totalPrice, app));
-			
-			System.out.println(history.get(id-1).getId()+" "+history.get(id-1).getTotalPrice());
+
+			System.out.println(history.get(id - 1).getId() + " " + history.get(id - 1).getTotalPrice());
 		}
-		
-		
+
 	}
 
 }

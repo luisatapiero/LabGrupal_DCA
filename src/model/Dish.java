@@ -4,6 +4,14 @@ public class Dish {
 
 	
 	private int price;
+	
+	public Dish(String name, int price) {
+
+		this.name = name;
+		this.price = price;
+	
+	}
+	
 	public int getPrice() {
 		return price;
 	}
@@ -22,12 +30,7 @@ public class Dish {
 
 	private String name;
 
-	public Dish(String name, int price) {
 
-		this.name = name;
-		this.price = price;
-	
-	}
 	
 	
 	
