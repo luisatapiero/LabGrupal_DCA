@@ -62,6 +62,9 @@ public class Main extends PApplet {
 		case 5:
 			orderview.drawScreen();
 			break;
+		case 6:
+			orderview.drawScreen();
+			break;
 		default:
 			break;
 		}
@@ -89,7 +92,13 @@ public class Main extends PApplet {
 			break;
 		case 5:
 			//screen = dishview.switchScreen();
+		//	orderview.switchScreen();
 			orderview.pressButtons();
+			break;
+		case 6:
+			//screen = dishview.switchScreen();
+			screen=orderview.switchScreen();
+			
 			break;
 		
 
