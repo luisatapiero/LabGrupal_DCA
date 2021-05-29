@@ -51,6 +51,7 @@ public class FoodApp {
 			totalPrice += price;
 		}else {
 			processPayment(totalPrice, screen);
+			totalPrice=0;
 		}
 		
 			
@@ -81,7 +82,7 @@ public class FoodApp {
 				app.fill(0);
 				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
 				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
-				System.out.println(totalPrice);
+				
 			}
 		}
 	}
@@ -90,12 +91,14 @@ public class FoodApp {
 	public void processPayment(int totalPrice, int screen) { //cuando le da pagar se guarda la orden
 		
 		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY && screen == 9) {
-			System.out.println(totalPrice);
-			System.out.println("procesando pago");
+			//System.out.println(totalPrice);
+			//System.out.println("procesando pago");
 			id++;
 			history.add(new Order(id, totalPrice, app));
-			System.out.println(id+" "+totalPrice);
+			
+			System.out.println(history.get(id-1).getId()+" "+history.get(id-1).getTotalPrice());
 		}
+		
 		
 	}
 
