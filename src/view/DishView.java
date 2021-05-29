@@ -45,21 +45,11 @@ public class DishView {
 
 	// método para pasar de pantalla
 	public int switchScreen() {
-		int screen = 5;
+		int screen = 4;
 
-		if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 146 && 282 > app.mouseY) {
-		
-			boolean capturedish = dish();
-			if (capturedish == true) {
-				screen = 5;
-			} 
+		if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 213 && 328 > app.mouseY) {
+			screen = 5;	
 		}	
 		return screen;
-	}
-	
-	public boolean dish() {
-		boolean dish = false;
-		return dish;
-
 	}
 }

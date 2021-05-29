@@ -7,7 +7,7 @@ public class ControllerMain {
 	private FoodApp foodapp;
 
 	public ControllerMain() {
-		// TODO Auto-generated constructor stub
+
 		foodapp = new FoodApp();
 	}
 
