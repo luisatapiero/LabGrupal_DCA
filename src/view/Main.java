@@ -26,7 +26,7 @@ public class Main extends PApplet {
 
 	public void setup() {
 
-		screen = 1;
+		screen = 3;
 		loginview = new LoginView(this);
 		signupview = new SignupView(this);
 		homeview = new HomeView(this);
@@ -60,10 +60,10 @@ public class Main extends PApplet {
 			dishview.drawScreen();
 			break;
 		case 5:
-			orderview.drawScreen();
+			orderview.drawScreen(screen);
 			break;
 		case 6:
-			orderview.drawScreen();
+			orderview.drawScreen(screen);
 			break;
 		default:
 			break;
@@ -73,6 +73,11 @@ public class Main extends PApplet {
 	}
 
 	public void mousePressed() {
+		
+		if (mouseX > 88 && 113 > mouseX && mouseY > 768 && 791 > mouseY) {   //esta parte permite que al seleccional el icono de home se pueda regresar a esa pantalla
+			screen = 3;	
+		}
+			
 		switch (screen) {
 		case 1:
 			screen = loginview.switchScreen();
@@ -88,7 +93,7 @@ public class Main extends PApplet {
 			screen = homeview.switchScreen();
 			break;
 		case 4:
-			screen = dishview.switchScreen();
+			screen = dishview.switchScreen(screen);
 			break;
 		case 5:
 			//screen = dishview.switchScreen();
