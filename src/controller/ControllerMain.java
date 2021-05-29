@@ -29,6 +29,10 @@ public class ControllerMain {
 		foodapp.cartInfo();
 	}
 	
+	public void processPayment() {
+		foodapp.processPayment();
+	}
+	
 	
 
 }

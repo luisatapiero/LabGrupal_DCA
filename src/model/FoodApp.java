@@ -8,8 +8,10 @@ import processing.core.PApplet;
 public class FoodApp {
 	private ArrayList<User> users;
 	private ArrayList<Dish> cart;
+	private ArrayList<Order> history;
 	private int currentUser;
 	private PApplet app;
+	private int id;
 
 	public FoodApp(PApplet app) {
 		// TODO Auto-generated constructor stub
@@ -17,6 +19,7 @@ public class FoodApp {
 		cart = new ArrayList<Dish>();
 		currentUser = 0;
 		this.app = app;
+		id = 0;
 	}
 
 	public void firstUser(PApplet app) {
@@ -49,8 +52,6 @@ public class FoodApp {
 		}
 
 	}
-
-	
 	
 	
 	public ArrayList<Dish> getCart() {
@@ -68,9 +69,19 @@ public class FoodApp {
 				System.out.println(cart.get(i).getName() + " " + cart.get(i).getPrice());
 			}
 			
-			
-		//}
 
+	}
+	
+	public void processPayment() {
+		id++;
+		int totalPrice = 0;
+		for (int j = 0; j < cart.size(); j++) {
+			totalPrice = + cart.get(j).getPrice();
+			
+		} 
+		
+		history.add(new Order(id, totalPrice, app));
+		System.out.println(history.get(1).getTotalPrice());
 	}
 
 }

@@ -31,6 +31,7 @@ public class PaymentView {
 	public void payFood(int screen) {
 		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY && screen == 9) {
 			System.out.println("procesando pago");
+			controllermain.processPayment();
 		}
 	}
 
