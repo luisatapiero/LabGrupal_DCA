@@ -81,8 +81,7 @@ public class Main extends PApplet {
 			break;
 
 		case 9:
-			paymentview.drawScreen();
-			controllermain.paintCartinfo();
+			paymentview.drawScreen(screen);
 
 			break;
 
@@ -120,7 +119,6 @@ public class Main extends PApplet {
 		case 6:
 
 			orderview.pressButtons(screen);
-			//controllermain.addCart();
 			break;
 
 		case 7:
@@ -138,8 +136,6 @@ public class Main extends PApplet {
 		case 9:
 
 			orderview.pressButtons(screen);
-			paymentview.payFood(screen);
-			//controllermain.processPayment();
 
 			break;
 

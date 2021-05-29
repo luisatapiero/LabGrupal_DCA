@@ -115,6 +115,7 @@ public class OrderView {
 		case 9:
 			//controllermain.paintCartinfo();
 			//app.image(order4, 0, 0);
+			
 			break;
 
 		default:
@@ -136,7 +137,7 @@ public class OrderView {
 		pressAcom();
 		addDish(screen);
 		
-		//System.out.println("si funciona esto del order view");
+
 
 	}
 
@@ -227,11 +228,11 @@ public class OrderView {
 	}
 	
 	private void addDish(int screen) {
-		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY && screen != 9) {
-			controllermain.addCart(name, price);
+		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
+			controllermain.addCart(name, price, screen);
 		}
 			
-		controllermain.cartInfo(screen);
+		
 	}
 
 

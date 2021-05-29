@@ -44,43 +44,59 @@ public class FoodApp {
 		return login;
 	}
 
-	public void addCart(String name, int price) {
-		cart.add(new Dish(name, price));
+	public void addCart(String name, int price, int screen) {
+		if (screen !=9) {
+			cart.add(new Dish(name, price));
 			System.out.println(cart.get(0).getName() + " " + cart.get(0).getPrice());
 			totalPrice += price;
-
+		}else {
+			processPayment(totalPrice, screen);
+		}
+		
+			
+			
+			//System.out.println(totalPrice);
 	}
 
-	public ArrayList<Dish> getCart() {
-		return cart;
-	}
+	
+	
 
-	public void cartInfo(int screen) {
+	public void cartInfo(int screen) { //se supone que pinta la info en la canasta
 		if (screen == 9) {
 			paintInfo = true;
-			System.out.println(paintInfo);
+			//System.out.println(paintInfo);
 			paintCartinfo();
-			processPayment(id, totalPrice);
+			
 		}
 		
 	}
 
-	public void paintCartinfo() {
+	public void paintCartinfo() { //Hace el proceso de pintar
+		
+		//System.out.println(totalPrice);
 		if (paintInfo) {
 
 			for (int i = 0; i < cart.size(); i++) {
-				// System.out.println("pinta info");
+				System.out.println("pinta info");
 				app.fill(0);
 				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
 				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
+				System.out.println(totalPrice);
 			}
 		}
 	}
+	
 
-	public void processPayment(int id, int totalPrice) {
-		id++;
-		history.add(new Order(id, totalPrice, app));
-		System.out.println(id+" "+totalPrice);
+	public void processPayment(int totalPrice, int screen) { //cuando le da pagar se guarda la orden
+		
+		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY && screen == 9) {
+			System.out.println(totalPrice);
+			System.out.println("procesando pago");
+			id++;
+			history.add(new Order(id, totalPrice, app));
+			System.out.println(id+" "+totalPrice);
+		}
+		
 	}
 
 }

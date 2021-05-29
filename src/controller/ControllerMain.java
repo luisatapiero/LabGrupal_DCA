@@ -21,21 +21,18 @@ public class ControllerMain {
 
 	}
 	
-	public void addCart(String name, int price) {
-		foodapp.addCart(name, price);
+	public void addCart(String name, int price, int screen) {
+		foodapp.addCart(name, price, screen);
 	}
 	
 	public void cartInfo(int screen) {
 		foodapp.cartInfo(screen);
 	}
 	
-	public void processPayment(int id, int totalPrice) {
-		foodapp.processPayment(id, totalPrice);
-	}
+	/*public void processPayment(int screen) {
+		foodapp.processPayment(screen);
+	}*/
 	
-	public void paintCartinfo() {
-		foodapp.paintCartinfo();;
-	}
 	
 	
 
