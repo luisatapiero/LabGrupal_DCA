@@ -11,15 +11,19 @@ public class FoodApp {
 	private ArrayList<Order> history;
 	private int currentUser;
 	private PApplet app;
-	private int id;
+	private int id, totalPrice;
+	private boolean paintInfo;
 
 	public FoodApp(PApplet app) {
 		// TODO Auto-generated constructor stub
 		users = new ArrayList<User>();
 		cart = new ArrayList<Dish>();
+		history = new ArrayList<Order>();
 		currentUser = 0;
 		this.app = app;
 		id = 0;
+		totalPrice = 0;
+		paintInfo = false;
 	}
 
 	public void firstUser(PApplet app) {
@@ -42,46 +46,41 @@ public class FoodApp {
 
 	public void addCart(String name, int price) {
 		cart.add(new Dish(name, price));
-		for (int i = 0; i < cart.size(); i++) {
-			System.out.println(cart.get(i).getName() + " " + cart.get(i).getPrice());
-			//System.out.println(cart.size());
-			//app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
-			//app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
-			
-
-		}
+			System.out.println(cart.get(0).getName() + " " + cart.get(0).getPrice());
+			totalPrice += price;
 
 	}
-	
-	
+
 	public ArrayList<Dish> getCart() {
 		return cart;
 	}
 
-	public void cartInfo() {
-		//if (cart.size() >= 1) {
-		//System.out.println("funcionoooo");
-		System.out.println("size desde foodapp "+cart.size());
-			for (int i = 0; i < cart.size(); i++) {
-				System.out.println("funciona");
-				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
-				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
-				System.out.println(cart.get(i).getName() + " " + cart.get(i).getPrice());
-			}
-			
-
-	}
-	
-	public void processPayment() {
-		id++;
-		int totalPrice = 0;
-		for (int j = 0; j < cart.size(); j++) {
-			totalPrice = + cart.get(j).getPrice();
-			
-		} 
+	public void cartInfo(int screen) {
+		if (screen == 9) {
+			paintInfo = true;
+			System.out.println(paintInfo);
+			paintCartinfo();
+			processPayment(id, totalPrice);
+		}
 		
+	}
+
+	public void paintCartinfo() {
+		if (paintInfo) {
+
+			for (int i = 0; i < cart.size(); i++) {
+				// System.out.println("pinta info");
+				app.fill(0);
+				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
+				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
+			}
+		}
+	}
+
+	public void processPayment(int id, int totalPrice) {
+		id++;
 		history.add(new Order(id, totalPrice, app));
-		System.out.println(history.get(1).getTotalPrice());
+		System.out.println(id+" "+totalPrice);
 	}
 
 }

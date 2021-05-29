@@ -25,12 +25,16 @@ public class ControllerMain {
 		foodapp.addCart(name, price);
 	}
 	
-	public void cartInfo() {
-		foodapp.cartInfo();
+	public void cartInfo(int screen) {
+		foodapp.cartInfo(screen);
 	}
 	
-	public void processPayment() {
-		foodapp.processPayment();
+	public void processPayment(int id, int totalPrice) {
+		foodapp.processPayment(id, totalPrice);
+	}
+	
+	public void paintCartinfo() {
+		foodapp.paintCartinfo();;
 	}
 	
 	

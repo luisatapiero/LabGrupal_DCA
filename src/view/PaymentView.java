@@ -24,14 +24,13 @@ public class PaymentView {
 	
 	public void drawScreen() {
 		app.image(canasta, 0, 0);
-		
-		//controllermain.cartInfo();
+		controllermain.paintCartinfo();
 	}
 	
 	public void payFood(int screen) {
 		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY && screen == 9) {
 			System.out.println("procesando pago");
-			controllermain.processPayment();
+			//controllermain.processPayment();
 		}
 	}
 

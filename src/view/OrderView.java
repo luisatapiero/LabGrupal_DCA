@@ -113,7 +113,7 @@ public class OrderView {
 			break;
 			
 		case 9:
-			
+			//controllermain.paintCartinfo();
 			//app.image(order4, 0, 0);
 			break;
 
@@ -135,7 +135,7 @@ public class OrderView {
 		pressAdditions();
 		pressAcom();
 		addDish(screen);
-		controllermain.cartInfo();
+		
 		//System.out.println("si funciona esto del order view");
 
 	}
@@ -230,6 +230,8 @@ public class OrderView {
 		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY && screen != 9) {
 			controllermain.addCart(name, price);
 		}
+			
+		controllermain.cartInfo(screen);
 	}
 
 
