@@ -9,13 +9,14 @@ public class FoodApp {
 	private ArrayList<User> users;
 	private ArrayList<Dish> cart;
 	private int currentUser;
+	private PApplet app;
 
 	public FoodApp() {
 		// TODO Auto-generated constructor stub
 		users = new ArrayList<User>();
 		cart = new ArrayList<Dish>();
 		currentUser = 0;
-
+		this.app = app;
 	}
 
 	public void firstUser(PApplet app) {
@@ -35,18 +36,29 @@ public class FoodApp {
 		}
 		return login;
 	}
-	
+
 	public void addCart(String name, int price) {
 		cart.add(new Dish(name, price));
 		for (int i = 0; i < cart.size(); i++) {
-			System.out.println(cart.get(i).getName()+" "+cart.get(i).getPrice());
-			
+			System.out.println(cart.get(i).getName() + " " + cart.get(i).getPrice());
+			System.out.println(cart.size());
+
 		}
-			
-		}
-		
+
 	}
-	
 
+	public void cartInfo() {
+		//if (cart.size() >= 1) {
+		System.out.println(cart.size());
+			for (int i = 0; i < cart.size(); i++) {
+				System.out.println("funciona");
+				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
+				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
+			}
+			
+			
+		//}
 
-	
+	}
+
+}

@@ -11,6 +11,7 @@ public class Main extends PApplet {
 	private HomeView homeview;
 	private DishView dishview;
 	private OrderView orderview;
+	private PaymentView paymentview;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -32,6 +33,7 @@ public class Main extends PApplet {
 		homeview = new HomeView(this);
 		dishview = new DishView(this);
 		orderview = new OrderView(this);
+		paymentview = new PaymentView(this);
 
 //	System.out.println(mouseX);	                     //para ver los valores de la posicion de los botones
 
@@ -74,6 +76,11 @@ public class Main extends PApplet {
 		case 8:
 			orderview.drawScreen(screen);
 			break;
+			
+		case 9:
+			paymentview.drawScreen();
+			break;
+			
 		default:
 			break;
 		}
@@ -87,6 +94,10 @@ public class Main extends PApplet {
 																			// icono de home se pueda regresar a esa
 																			// pantalla
 			screen = 3;
+		}
+		
+		if (mouseX > 174 && 204 > mouseX && mouseY > 767 && 794 > mouseY) { 
+		screen = 9;
 		}
 
 		switch (screen) {
@@ -126,6 +137,13 @@ public class Main extends PApplet {
 		case 8:
 
 			orderview.pressButtons();
+			
+
+			break;
+			
+		case 9:
+
+			//orderview.pressButtons();
 			
 
 			break;

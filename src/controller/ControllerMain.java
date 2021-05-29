@@ -24,5 +24,9 @@ public class ControllerMain {
 	public void addCart(String name, int price) {
 		foodapp.addCart(name, price);
 	}
+	
+	public void cartInfo() {
+		foodapp.cartInfo();
+	}
 
 }
