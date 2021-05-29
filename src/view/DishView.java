@@ -49,12 +49,18 @@ public class DishView {
 
 		if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 213 && 328 > app.mouseY) {
 			screen = 5;	
-		}	else if (app.mouseX > 88 && 113 > app.mouseX && app.mouseY > 768 && 791 > app.mouseY) {   //esta parte permite que al seleccional el icono de home se pueda regresar a esa pantalla
-			screen = 3;	
-		} 
+		}	
 		   else if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 335 && 457 > app.mouseY) {   
 			screen = 6;	
 		} 
+		
+		   else if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 472 && 588 > app.mouseY) {   
+				screen = 7;	
+			} 
+		
+		   else if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 603 && 717 > app.mouseY) {   
+				screen = 8;	
+			} 
 		
 		return screen;
 	}

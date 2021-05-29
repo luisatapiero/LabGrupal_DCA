@@ -32,7 +32,7 @@ public class Main extends PApplet {
 		homeview = new HomeView(this);
 		dishview = new DishView(this);
 		orderview = new OrderView(this);
-		
+
 //	System.out.println(mouseX);	                     //para ver los valores de la posicion de los botones
 
 	}
@@ -48,8 +48,8 @@ public class Main extends PApplet {
 			break;
 		case 2:
 			signupview.drawScreen();
-			loginview.hideCp5();    // Oculta un objeto pero no lo descarga.
-			signupview.showCp5();   //metodo para cuando este en un pantalla se muestre
+			loginview.hideCp5(); // Oculta un objeto pero no lo descarga.
+			signupview.showCp5(); // metodo para cuando este en un pantalla se muestre
 			break;
 		case 3:
 			homeview.drawScreen();
@@ -65,6 +65,14 @@ public class Main extends PApplet {
 		case 6:
 			orderview.drawScreen(screen);
 			break;
+
+		case 7:
+			orderview.drawScreen(screen);
+			break;
+
+		case 8:
+			orderview.drawScreen(screen);
+			break;
 		default:
 			break;
 		}
@@ -73,21 +81,23 @@ public class Main extends PApplet {
 	}
 
 	public void mousePressed() {
-		
-		if (mouseX > 88 && 113 > mouseX && mouseY > 768 && 791 > mouseY) {   //esta parte permite que al seleccional el icono de home se pueda regresar a esa pantalla
-			screen = 3;	
+
+		if (mouseX > 88 && 113 > mouseX && mouseY > 768 && 791 > mouseY) { // esta parte permite que al seleccional el
+																			// icono de home se pueda regresar a esa
+																			// pantalla
+			screen = 3;
 		}
-			
+
 		switch (screen) {
 		case 1:
 			screen = loginview.switchScreen();
 			signupview.emptyTextfields();
-			//System.out.println(screen);
+			// System.out.println(screen);
 			break;
 		case 2:
 			screen = signupview.switchScreen();
 			loginview.emptyTextfields();
-			//System.out.println(screen);
+			// System.out.println(screen);
 			break;
 		case 3:
 			screen = homeview.switchScreen();
@@ -96,16 +106,13 @@ public class Main extends PApplet {
 			screen = dishview.switchScreen(screen);
 			break;
 		case 5:
-			//screen = dishview.switchScreen();
-		//	orderview.switchScreen();
 			orderview.pressButtons();
 			break;
 		case 6:
-			//screen = dishview.switchScreen();
-			screen=orderview.switchScreen();
-			
+
+			screen = orderview.switchScreen();
+
 			break;
-		
 
 		default:
 			break;

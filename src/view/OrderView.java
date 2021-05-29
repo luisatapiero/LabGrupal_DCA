@@ -9,7 +9,7 @@ import processing.core.PImage;
 public class OrderView {
 
 	private ControllerMain controllermain;
-	private PImage order1, order1_1, order2;
+	private PImage order1, order1_1, order2, order3, order4;
 
 	private PImage adic1;
 	private PImage adic1b;
@@ -37,7 +37,6 @@ public class OrderView {
 	private boolean pressAcom3;
 	private boolean pressAcom4;
 
-	private int option;
 
 	public OrderView(PApplet app) {
 
@@ -52,12 +51,18 @@ public class OrderView {
 		pressAcom2 = false;
 		pressAcom3 = false;
 		pressAcom4 = false;
-		option = 2;
 
-		order2 = app.loadImage("Img/Order2.png");
+		
 
 		order1 = app.loadImage("Img/Order1.png");
 		order1_1 = app.loadImage("Img/Order1_1.png");
+		
+		order2 = app.loadImage("Img/Order2.png");
+		
+		order3 = app.loadImage("Img/Order3.png");
+		
+		order4 = app.loadImage("Img/Order4.png");
+		
 		adic1 = app.loadImage("Img/buttons/Adic1.png");
 		adic1b = app.loadImage("Img/buttons/Adic1b.png");
 
@@ -86,10 +91,11 @@ public class OrderView {
 
 	// método para pintar la pantalla
 	public void drawScreen(int screen) {
-
+		
 		switch (screen) {
+	
 		case 5:
-			
+
 			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
 				app.image(order1_1, 0, 0);
 			} else {
@@ -105,12 +111,12 @@ public class OrderView {
 			break;
 					
 		case 7:
-			
+			app.image(order3, 0, 0);
 			break;
 			
 			
 		case 8:
-			
+			app.image(order4, 0, 0);
 			break;
 
 		default:
