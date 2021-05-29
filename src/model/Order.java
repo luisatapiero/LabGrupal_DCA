@@ -1,9 +1,15 @@
 package model;
 
-public class Order {
+import processing.core.PApplet;
 
-	public Order() {
-		// TODO Auto-generated constructor stub
+public class Order {
+	
+	private PApplet app;
+	
+	public Order(int id, int totalPrice, PApplet app) {
+
+	this.app = app;
+		
 	}
 
 }
