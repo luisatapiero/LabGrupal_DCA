@@ -113,7 +113,7 @@ public class OrderView {
 			break;
 			
 		case 9:
-			controllermain.cartInfo();
+			
 			//app.image(order4, 0, 0);
 			break;
 
@@ -135,6 +135,8 @@ public class OrderView {
 		pressAdditions();
 		pressAcom();
 		addDish(screen);
+		controllermain.cartInfo();
+		//System.out.println("si funciona esto del order view");
 
 	}
 

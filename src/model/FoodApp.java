@@ -60,8 +60,8 @@ public class FoodApp {
 
 	public void cartInfo() {
 		//if (cart.size() >= 1) {
-		System.out.println("funcionoooo");
-		System.out.println(cart.size());
+		//System.out.println("funcionoooo");
+		System.out.println("size desde foodapp "+cart.size());
 			for (int i = 0; i < cart.size(); i++) {
 				System.out.println("funciona");
 				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
