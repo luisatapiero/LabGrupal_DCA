@@ -3,8 +3,32 @@ package model;
 public class Dish {
 
 	
-	public Dish(int id, String name, int price, String extra1, String extra2, String extra3) {
-		// TODO Auto-generated constructor stub
+	private int price;
+	public int getPrice() {
+		return price;
 	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	private String name;
+
+	public Dish(String name, int price) {
+
+		this.name = name;
+		this.price = price;
+	
+	}
+	
+	
 	
 }

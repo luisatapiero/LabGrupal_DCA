@@ -20,5 +20,9 @@ public class ControllerMain {
 		return foodapp.login(email, password);
 
 	}
+	
+	public void addCart(String name, int price) {
+		foodapp.addCart(name, price);
+	}
 
 }

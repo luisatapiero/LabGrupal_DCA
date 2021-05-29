@@ -111,7 +111,22 @@ public class Main extends PApplet {
 			break;
 		case 6:
 
-			screen = orderview.switchScreen();
+			orderview.pressButtons();
+			
+
+			break;
+			
+		case 7:
+
+			orderview.pressButtons();
+			
+
+			break;
+			
+		case 8:
+
+			orderview.pressButtons();
+			
 
 			break;
 

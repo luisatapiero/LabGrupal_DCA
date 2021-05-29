@@ -11,22 +11,7 @@ public class OrderView {
 	private ControllerMain controllermain;
 	private PImage order1, order1_1, order2, order3, order4;
 
-	private PImage adic1;
-	private PImage adic1b;
-	private PImage adic2;
-	private PImage adic2b;
-	private PImage adic3;
-	private PImage adic3b;
-	private PImage adic4;
-	private PImage adic4b;
-	private PImage acom1;
-	private PImage acom1b;
-	private PImage acom2;
-	private PImage acom2b;
-	private PImage acom3;
-	private PImage acom3b;
-	private PImage acom4;
-	private PImage acom4b;
+	private PImage adic1, adic1b, adic2, adic2b, adic3, adic3b, adic4, adic4b, acom1, acom1b, acom2, acom2b, acom3, acom3b, acom4, acom4b;
 	private PApplet app;
 	private boolean pressAdic1;
 	private boolean pressAdic2;
@@ -37,7 +22,9 @@ public class OrderView {
 	private boolean pressAcom3;
 	private boolean pressAcom4;
 
-
+	private String name;
+	private int price; 
+	
 	public OrderView(PApplet app) {
 
 		controllermain = new ControllerMain();
@@ -52,8 +39,8 @@ public class OrderView {
 		pressAcom3 = false;
 		pressAcom4 = false;
 
-		
-
+		price = 0;
+		name = "";
 		order1 = app.loadImage("Img/Order1.png");
 		order1_1 = app.loadImage("Img/Order1_1.png");
 		
@@ -95,7 +82,8 @@ public class OrderView {
 		switch (screen) {
 	
 		case 5:
-
+			name = "Hamburguesa Clásica";
+			price = 12900;
 			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
 				app.image(order1_1, 0, 0);
 			} else {
@@ -105,17 +93,22 @@ public class OrderView {
 			break;
 					
 		case 6:
-			
+			price = 14900;
+			name = "Hamburguesa Americana";
 			app.image(order2, 0, 0);
 					
 			break;
 					
 		case 7:
+			price = 42800;
+			name = "Combo Doble";
 			app.image(order3, 0, 0);
 			break;
 			
 			
 		case 8:
+			price = 59900;
+			name = "Combo Triple";
 			app.image(order4, 0, 0);
 			break;
 
@@ -132,14 +125,11 @@ public class OrderView {
 
 	}
 
-	public int switchScreen() {
-		int screen = 6;
-		return screen;
-	}
 
 	public void pressButtons() {
 		pressAdditions();
 		pressAcom();
+		addDish();
 
 	}
 
@@ -228,66 +218,47 @@ public class OrderView {
 			app.image(acom4, 265, 583);
 		}
 	}
-
-	public boolean isPressAdic1() {
-		return pressAdic1;
+	
+	private void addDish() {
+		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
+			controllermain.addCart(name, price);
+		}
 	}
+
 
 	public void setPressAdic1(boolean pressAdic1) {
 		this.pressAdic1 = pressAdic1;
 	}
 
-	public boolean isPressAdic2() {
-		return pressAdic2;
-	}
 
 	public void setPressAdic2(boolean pressAdic2) {
 		this.pressAdic2 = pressAdic2;
 	}
 
-	public boolean isPressAdic3() {
-		return pressAdic3;
-	}
 
 	public void setPressAdic3(boolean pressAdic3) {
 		this.pressAdic3 = pressAdic3;
 	}
 
-	public boolean isPressAdic4() {
-		return pressAdic4;
-	}
 
 	public void setPressAdic4(boolean pressAdic4) {
 		this.pressAdic4 = pressAdic4;
-	}
-
-	public boolean isPressAcom1() {
-		return pressAcom1;
 	}
 
 	public void setPressAcom1(boolean pressAcom1) {
 		this.pressAcom1 = pressAcom1;
 	}
 
-	public boolean isPressAcom2() {
-		return pressAcom2;
-	}
 
 	public void setPressAcom2(boolean pressAcom2) {
 		this.pressAcom2 = pressAcom2;
 	}
 
-	public boolean isPressAcom3() {
-		return pressAcom3;
-	}
 
 	public void setPressAcom3(boolean pressAcom3) {
 		this.pressAcom3 = pressAcom3;
 	}
 
-	public boolean isPressAcom4() {
-		return pressAcom4;
-	}
 
 	public void setPressAcom4(boolean pressAcom4) {
 		this.pressAcom4 = pressAcom4;
