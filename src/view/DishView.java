@@ -11,7 +11,7 @@ public class DishView {
 
 	public DishView(PApplet app) {
 		// TODO Auto-generated constructor stub
-		controllermain = new ControllerMain();
+		controllermain = new ControllerMain(app);
 		this.app = app;
 
 		dish_1 = app.loadImage("img/Dish_1.png");

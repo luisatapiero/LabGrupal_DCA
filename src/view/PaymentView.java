@@ -14,7 +14,7 @@ public class PaymentView {
 	
 
 	public PaymentView(PApplet app) {
-		controllermain = new ControllerMain();
+		controllermain = new ControllerMain(app);
 		this.app = app;
 		
 		montserrat = app.createFont("Fonts/Montserrat-Regular.ttf", 14);
@@ -24,8 +24,14 @@ public class PaymentView {
 	
 	public void drawScreen() {
 		app.image(canasta, 0, 0);
-		controllermain.cartInfo();
+		
+		//controllermain.cartInfo();
 	}
 	
+	public void payFood(int screen) {
+		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY && screen == 9) {
+			System.out.println("procesando pago");
+		}
+	}
 
 }

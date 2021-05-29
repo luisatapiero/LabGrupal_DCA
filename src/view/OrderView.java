@@ -27,7 +27,7 @@ public class OrderView {
 	
 	public OrderView(PApplet app) {
 
-		controllermain = new ControllerMain();
+		controllermain = new ControllerMain(app);
 		this.app = app;
 
 		pressAdic1 = false;
@@ -111,6 +111,11 @@ public class OrderView {
 			name = "Combo Triple";
 			app.image(order4, 0, 0);
 			break;
+			
+		case 9:
+			controllermain.cartInfo();
+			//app.image(order4, 0, 0);
+			break;
 
 		default:
 			break;
@@ -126,10 +131,10 @@ public class OrderView {
 	}
 
 
-	public void pressButtons() {
+	public void pressButtons(int screen) {
 		pressAdditions();
 		pressAcom();
-		addDish();
+		addDish(screen);
 
 	}
 
@@ -219,8 +224,8 @@ public class OrderView {
 		}
 	}
 	
-	private void addDish() {
-		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
+	private void addDish(int screen) {
+		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY && screen != 9) {
 			controllermain.addCart(name, price);
 		}
 	}

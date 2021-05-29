@@ -11,7 +11,7 @@ public class FoodApp {
 	private int currentUser;
 	private PApplet app;
 
-	public FoodApp() {
+	public FoodApp(PApplet app) {
 		// TODO Auto-generated constructor stub
 		users = new ArrayList<User>();
 		cart = new ArrayList<Dish>();
@@ -41,19 +41,31 @@ public class FoodApp {
 		cart.add(new Dish(name, price));
 		for (int i = 0; i < cart.size(); i++) {
 			System.out.println(cart.get(i).getName() + " " + cart.get(i).getPrice());
-			System.out.println(cart.size());
+			//System.out.println(cart.size());
+			//app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
+			//app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
+			
 
 		}
 
 	}
 
+	
+	
+	
+	public ArrayList<Dish> getCart() {
+		return cart;
+	}
+
 	public void cartInfo() {
 		//if (cart.size() >= 1) {
+		System.out.println("funcionoooo");
 		System.out.println(cart.size());
 			for (int i = 0; i < cart.size(); i++) {
 				System.out.println("funciona");
 				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
 				app.text(cart.get(i).getName() + " " + cart.get(i).getPrice(), 30, i * 100 + 156);
+				System.out.println(cart.get(i).getName() + " " + cart.get(i).getPrice());
 			}
 			
 			

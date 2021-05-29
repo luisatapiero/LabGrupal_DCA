@@ -14,7 +14,7 @@ public class HomeView {
 
 	public HomeView(PApplet app) {
 		// TODO Auto-generated constructor stub
-		controllermain = new ControllerMain();
+		controllermain = new ControllerMain(app);
 		this.app = app;
 
 		home_1 = app.loadImage("img/Home_1.png");

@@ -25,7 +25,7 @@ public class SignupView {
 
 	public SignupView(PApplet app) {
 		// TODO Auto-generated constructor stub
-		controllermain = new ControllerMain();
+		controllermain = new ControllerMain(app);
 		this.app = app;
 
 		signup_1 = app.loadImage("img/SignUp_1.png");

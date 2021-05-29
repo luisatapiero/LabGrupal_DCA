@@ -1,6 +1,7 @@
 package view;
 
 import controlP5.ControlP5;
+import controller.ControllerMain;
 import processing.core.PApplet;
 
 public class Main extends PApplet {
@@ -12,6 +13,7 @@ public class Main extends PApplet {
 	private DishView dishview;
 	private OrderView orderview;
 	private PaymentView paymentview;
+	private ControllerMain controllermain;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -34,6 +36,7 @@ public class Main extends PApplet {
 		dishview = new DishView(this);
 		orderview = new OrderView(this);
 		paymentview = new PaymentView(this);
+		controllermain = new ControllerMain (this);
 
 //	System.out.println(mouseX);	                     //para ver los valores de la posicion de los botones
 
@@ -76,11 +79,12 @@ public class Main extends PApplet {
 		case 8:
 			orderview.drawScreen(screen);
 			break;
-			
+
 		case 9:
 			paymentview.drawScreen();
+
 			break;
-			
+
 		default:
 			break;
 		}
@@ -90,15 +94,7 @@ public class Main extends PApplet {
 
 	public void mousePressed() {
 
-		if (mouseX > 88 && 113 > mouseX && mouseY > 768 && 791 > mouseY) { // esta parte permite que al seleccional el
-																			// icono de home se pueda regresar a esa
-																			// pantalla
-			screen = 3;
-		}
-		
-		if (mouseX > 174 && 204 > mouseX && mouseY > 767 && 794 > mouseY) { 
-		screen = 9;
-		}
+		menu();
 
 		switch (screen) {
 		case 1:
@@ -118,33 +114,30 @@ public class Main extends PApplet {
 			screen = dishview.switchScreen(screen);
 			break;
 		case 5:
-			orderview.pressButtons();
+			orderview.pressButtons(screen);
 			break;
 		case 6:
 
-			orderview.pressButtons();
-			
-
+			orderview.pressButtons(screen);
+			//controllermain.addCart();
 			break;
-			
+
 		case 7:
 
-			orderview.pressButtons();
-			
+			orderview.pressButtons(screen);
 
 			break;
-			
+
 		case 8:
 
-			orderview.pressButtons();
-			
+			orderview.pressButtons(screen);
 
 			break;
-			
+
 		case 9:
 
-			//orderview.pressButtons();
-			
+			orderview.pressButtons(screen);
+			paymentview.payFood(screen);
 
 			break;
 
@@ -152,7 +145,7 @@ public class Main extends PApplet {
 			break;
 		}
 	}
-	
+
 	private void clearAdditions() {
 		orderview.setPressAcom1(false);
 		orderview.setPressAcom2(false);
@@ -162,6 +155,18 @@ public class Main extends PApplet {
 		orderview.setPressAdic2(false);
 		orderview.setPressAdic3(false);
 		orderview.setPressAdic4(false);
+	}
+
+	private void menu() {
+		if (mouseX > 88 && 113 > mouseX && mouseY > 768 && 791 > mouseY) { // esta parte permite que al seleccional el
+			// icono de home se pueda regresar a esa
+			// pantalla
+			screen = 3;
+		}
+
+		if (mouseX > 174 && 204 > mouseX && mouseY > 767 && 794 > mouseY) {
+			screen = 9;
+		}
 	}
 
 }

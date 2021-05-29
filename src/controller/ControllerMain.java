@@ -6,9 +6,9 @@ import processing.core.PApplet;
 public class ControllerMain {
 	private FoodApp foodapp;
 
-	public ControllerMain() {
+	public ControllerMain(PApplet app) {
 
-		foodapp = new FoodApp();
+		foodapp = new FoodApp(app);
 	}
 
 	public void firstUser(PApplet app) {
@@ -28,5 +28,7 @@ public class ControllerMain {
 	public void cartInfo() {
 		foodapp.cartInfo();
 	}
+	
+	
 
 }

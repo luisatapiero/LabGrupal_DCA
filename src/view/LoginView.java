@@ -21,7 +21,7 @@ public class LoginView {
 
 	public LoginView(PApplet app) {
 		// TODO Auto-generated constructor stub
-		controllermain = new ControllerMain();
+		controllermain = new ControllerMain(app);
 		this.app = app;
 		controllermain.firstUser(app);
 
