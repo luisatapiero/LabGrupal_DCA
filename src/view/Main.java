@@ -55,6 +55,7 @@ public class Main extends PApplet {
 			homeview.drawScreen();
 			loginview.hideCp5();
 			signupview.hideCp5();
+			clearAdditions();
 			break;
 		case 4:
 			dishview.drawScreen();
@@ -117,6 +118,17 @@ public class Main extends PApplet {
 		default:
 			break;
 		}
+	}
+	
+	private void clearAdditions() {
+		orderview.setPressAcom1(false);
+		orderview.setPressAcom2(false);
+		orderview.setPressAcom3(false);
+		orderview.setPressAcom4(false);
+		orderview.setPressAdic1(false);
+		orderview.setPressAdic2(false);
+		orderview.setPressAdic3(false);
+		orderview.setPressAdic4(false);
 	}
 
 }

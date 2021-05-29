@@ -229,4 +229,71 @@ public class OrderView {
 		}
 	}
 
+	public boolean isPressAdic1() {
+		return pressAdic1;
+	}
+
+	public void setPressAdic1(boolean pressAdic1) {
+		this.pressAdic1 = pressAdic1;
+	}
+
+	public boolean isPressAdic2() {
+		return pressAdic2;
+	}
+
+	public void setPressAdic2(boolean pressAdic2) {
+		this.pressAdic2 = pressAdic2;
+	}
+
+	public boolean isPressAdic3() {
+		return pressAdic3;
+	}
+
+	public void setPressAdic3(boolean pressAdic3) {
+		this.pressAdic3 = pressAdic3;
+	}
+
+	public boolean isPressAdic4() {
+		return pressAdic4;
+	}
+
+	public void setPressAdic4(boolean pressAdic4) {
+		this.pressAdic4 = pressAdic4;
+	}
+
+	public boolean isPressAcom1() {
+		return pressAcom1;
+	}
+
+	public void setPressAcom1(boolean pressAcom1) {
+		this.pressAcom1 = pressAcom1;
+	}
+
+	public boolean isPressAcom2() {
+		return pressAcom2;
+	}
+
+	public void setPressAcom2(boolean pressAcom2) {
+		this.pressAcom2 = pressAcom2;
+	}
+
+	public boolean isPressAcom3() {
+		return pressAcom3;
+	}
+
+	public void setPressAcom3(boolean pressAcom3) {
+		this.pressAcom3 = pressAcom3;
+	}
+
+	public boolean isPressAcom4() {
+		return pressAcom4;
+	}
+
+	public void setPressAcom4(boolean pressAcom4) {
+		this.pressAcom4 = pressAcom4;
+	}
+	
+	
+	
+
 }
