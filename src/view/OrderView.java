@@ -11,9 +11,9 @@ public class OrderView {
 	private ControllerMain controllermain;
 	private PImage order1, order1_1, order2, order3, order4, order2_1, order3_1, order4_1;
 	private PImage status;
-	
 
-	private PImage adic1, adic1b, adic2, adic2b, adic3, adic3b, adic4, adic4b, acom1, acom1b, acom2, acom2b, acom3, acom3b, acom4, acom4b;
+	private PImage adic1, adic1b, adic2, adic2b, adic3, adic3b, adic4, adic4b, acom1, acom1b, acom2, acom2b, acom3,
+			acom3b, acom4, acom4b;
 	private PApplet app;
 	private boolean pressAdic1;
 	private boolean pressAdic2;
@@ -25,8 +25,8 @@ public class OrderView {
 	private boolean pressAcom4;
 
 	private String name;
-	private int price; 
-	
+	private int price;
+
 	public OrderView(PApplet app) {
 
 		controllermain = new ControllerMain(app);
@@ -51,13 +51,13 @@ public class OrderView {
 		order3_1 = app.loadImage("Img/Order3_1.png");
 		order4 = app.loadImage("Img/Order4.png");
 		order4_1 = app.loadImage("Img/Order4_1.png");
-		
+
 		order2 = app.loadImage("Img/Order2.png");
-		
+
 		order3 = app.loadImage("Img/Order3.png");
-		
+
 		order4 = app.loadImage("Img/Order4.png");
-		
+
 		adic1 = app.loadImage("Img/buttons/Adic1.png");
 		adic1b = app.loadImage("Img/buttons/Adic1b.png");
 
@@ -82,16 +82,14 @@ public class OrderView {
 		acom4 = app.loadImage("Img/buttons/Acom4.png");
 		acom4b = app.loadImage("Img/buttons/Acom4b.png");
 		status = app.loadImage("Img/Status.png");
-		
-		
 
 	}
 
 	// mÃ©todo para pintar la pantalla
 	public void drawScreen(int screen) {
-		
+
 		switch (screen) {
-	
+
 		case 5:
 			name = "Hamburguesa Clásica";
 			price = 12900;
@@ -100,70 +98,60 @@ public class OrderView {
 			} else {
 				app.image(order1, 0, 0);
 			}
-			
+
 			break;
-					
+
 		case 6:
 			price = 14900;
 			name = "Hamburguesa Americana";
-			
+
 			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
 				app.image(order2_1, 0, 0);
 			} else {
 				app.image(order2, 0, 0);
-			}		
+			}
 			break;
-					
+
 		case 7:
 			price = 42800;
 			name = "Combo Doble";
-			
+
 			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
 				app.image(order3_1, 0, 0);
 			} else {
 				app.image(order3, 0, 0);
 			}
 			break;
-			
-			
+
 		case 8:
 			price = 59900;
 			name = "Combo Triple";
-			
-			
+
 			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
 				app.image(order4_1, 0, 0);
 			} else {
 				app.image(order4, 0, 0);
 			}
 			break;
-			
+
 		case 9:
-			//controllermain.cartInfo(screen);
-			//app.image(order4, 0, 0);
-			
+			// controllermain.cartInfo(screen);
+			// app.image(order4, 0, 0);
+
 			break;
 
 		default:
 			break;
 		}
-			
-
-
-			
-
 
 		changeButton();
 
 	}
 
-
 	public void pressButtons(int screen) {
 		pressAdditions();
 		pressAcom();
 		addDish(screen);
-		
-
 
 	}
 
@@ -252,30 +240,25 @@ public class OrderView {
 			app.image(acom4, 265, 583);
 		}
 	}
-	
+
 	private void addDish(int screen) {
 		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
 			controllermain.addCart(name, price, screen);
-		} 
-			
-		
-	}
+		}
 
+	}
 
 	public void setPressAdic1(boolean pressAdic1) {
 		this.pressAdic1 = pressAdic1;
 	}
 
-
 	public void setPressAdic2(boolean pressAdic2) {
 		this.pressAdic2 = pressAdic2;
 	}
 
-
 	public void setPressAdic3(boolean pressAdic3) {
 		this.pressAdic3 = pressAdic3;
 	}
-
 
 	public void setPressAdic4(boolean pressAdic4) {
 		this.pressAdic4 = pressAdic4;
@@ -285,29 +268,24 @@ public class OrderView {
 		this.pressAcom1 = pressAcom1;
 	}
 
-
 	public void setPressAcom2(boolean pressAcom2) {
 		this.pressAcom2 = pressAcom2;
 	}
-
 
 	public void setPressAcom3(boolean pressAcom3) {
 		this.pressAcom3 = pressAcom3;
 	}
 
-
 	public void setPressAcom4(boolean pressAcom4) {
 		this.pressAcom4 = pressAcom4;
 	}
-	
-	public ControllerMain getControllermain() {
-        return controllermain;
-    }
 
-    public void setControllermain(ControllerMain controllermain) {
-        this.controllermain = controllermain;
-    }
-	
-	
+	public ControllerMain getControllermain() {
+		return controllermain;
+	}
+
+	public void setControllermain(ControllerMain controllermain) {
+		this.controllermain = controllermain;
+	}
 
 }

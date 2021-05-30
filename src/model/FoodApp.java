@@ -76,8 +76,8 @@ public class FoodApp {
 
 			for (int j = 0; j < cart.size(); j++) {
 				app.fill(0);
-				app.text(cart.get(j).getName() + " " + cart.get(j).getPrice(), 30, j * 100 + 156);
-				app.text(cart.get(j).getName() + " " + cart.get(j).getPrice(), 30, j * 100 + 156);
+				app.text(cart.get(j).getName() + "    $ " + cart.get(j).getPrice(), 30, j * 20 + 176);
+				//app.text(cart.get(j).getName() + "    $ " + cart.get(j).getPrice(), 30, j * 20 + 176);
 
 			}
 
@@ -88,7 +88,7 @@ public class FoodApp {
 
 	public void processPayment(int totalPrice, int screen) { // cuando le da pagar se guarda la orden
 
-		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY && screen == 9) {
+		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
 
 			id++;
 			history.add(new Order(id, totalPrice, app));

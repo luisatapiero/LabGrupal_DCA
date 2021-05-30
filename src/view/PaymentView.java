@@ -26,6 +26,7 @@ public class PaymentView {
 
 		switch (screen) {
 		case 9:
+			app.textFont(montserrat);
 			app.image(canasta, 0, 0);
 			controllermain.cartInfo(screen);
 			break;

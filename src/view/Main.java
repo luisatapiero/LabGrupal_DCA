@@ -142,8 +142,9 @@ public class Main extends PApplet {
 			break;
 
 		case 9:
-			screen = paymentview.switchScreen(screen);
 			orderview.pressButtons(screen);
+			screen = paymentview.switchScreen(screen);
+			
 			
 
 			break;
