@@ -2,6 +2,7 @@ package view;
 
 import controller.ControllerMain;
 import processing.core.PApplet;
+import processing.core.PFont;
 import processing.core.PImage;
 
 public class HistoryView {
@@ -9,12 +10,15 @@ public class HistoryView {
     OrderView orderView;
     private ControllerMain controllermain;
     private PImage history1;
+    private PFont montserrat;
 
 	public HistoryView(OrderView orderView , PApplet app) {
 		this.app=app; 
         this.orderView = orderView; 
         controllermain = new ControllerMain(app);
         history1 = app.loadImage("Img/History.png");
+		montserrat = app.createFont("Fonts/Montserrat-Regular.ttf", 14);
+
 		
 	}
 	public void drawHistory(int screen) {

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class FoodApp {
 	private ArrayList<User> users;
@@ -13,6 +14,8 @@ public class FoodApp {
 	private PApplet app;
 	private int id, totalPrice;
 	private boolean paintInfo;
+	private PImage status;
+	private boolean paintStatus;
 
 	public FoodApp(PApplet app) {
 		// TODO Auto-generated constructor stub
@@ -24,6 +27,8 @@ public class FoodApp {
 		id = 0;
 		totalPrice = 0;
 		paintInfo = false;
+		status = app.loadImage("Img/Status.png");
+		paintStatus = false;
 	}
 
 	public void firstUser(PApplet app) {
@@ -81,6 +86,9 @@ public class FoodApp {
 
 			id++;
 			history.add(new Order(id, totalPrice, app));
+			if (paintStatus = true) {
+			app.image(status,0,0);
+			}
 
 			System.out.println(history.get(id - 1).getId() + " " + history.get(id - 1).getTotalPrice());
 		}
