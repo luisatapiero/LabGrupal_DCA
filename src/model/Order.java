@@ -13,11 +13,11 @@ public class Order implements Comparable <Order> {
 	private int totalPrice;
 	private Date date;
 	//private arrayList <Dish> dish;
-	private LinkedList<Order> listOrder;
+	
 	
 	public Order(int id, int totalPrice, PApplet app) {
 		date = new Date();
-		listOrder = new LinkedList<Order>();
+		
 		//arrayList
 		
 	this.id = id;

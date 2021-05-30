@@ -38,4 +38,10 @@ public class HistoryView {
 			}
 		}
 	}
+	
+	public void cliclBottons(int screen) {
+		if (screen == 10){
+			controllermain.sortHistory(screen);
+		}
+	}
 }

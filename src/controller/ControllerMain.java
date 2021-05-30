@@ -46,6 +46,11 @@ public class ControllerMain {
 foodapp.registerUser(app,name,lastname,city,address,email,password);
 	}
 	
+	public void sortHistory(int screen) {
+		foodapp.sortHistory(screen);
+		
+	}
+	
 	
 
 }

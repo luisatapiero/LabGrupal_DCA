@@ -1,7 +1,9 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedList;
 
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -17,6 +19,9 @@ public class FoodApp {
 	
 	private boolean paintStatus;
 	private static FoodApp foodapp;
+	
+	private LinkedList<Order> listOrder;
+	private OrderValueCompare orderValueCompare;
 
 	public static FoodApp getInstance(PApplet app) {
 		if (foodapp == null) {
@@ -35,6 +40,8 @@ public class FoodApp {
 		id = 0;
 		totalPrice = 0;
 		paintInfo = false;
+		listOrder = new LinkedList<Order>();
+		orderValueCompare = new OrderValueCompare();
 
 	}
 
@@ -114,6 +121,18 @@ public class FoodApp {
 		users.add(u);
 		System.out.println(users.size());
 
+	}
+	
+	public void sortHistory(int screen) {
+		if (app.mouseX > 20 && 158 > app.mouseX && app.mouseY > 676 && 723 > app.mouseY) {
+			Collections.sort(listOrder);
+			System.out.println("Esta Ordenado");
+		
+		}
+		
+		if(app.mouseX > 214 && 346 > app.mouseX && app.mouseY > 677 && 722 > app.mouseY) {
+			Collections.sort(listOrder, orderValueCompare);
+		}
 	}
 
 }
