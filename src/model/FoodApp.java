@@ -16,8 +16,16 @@ public class FoodApp {
 	private boolean paintInfo;
 	private PImage status;
 	private boolean paintStatus;
+	private static FoodApp foodapp;
 
-	public FoodApp(PApplet app) {
+	public static FoodApp getInstance(PApplet app) {
+		if (foodapp == null) {
+			foodapp = new FoodApp(app);
+		}
+		return foodapp;
+	}
+
+	private FoodApp(PApplet app) {
 		// TODO Auto-generated constructor stub
 		users = new ArrayList<User>();
 		cart = new ArrayList<Dish>();
@@ -43,9 +51,12 @@ public class FoodApp {
 				if (password.equals(users.get(i).getPassword())) {
 					login = true;
 					currentUser = i;
+
 				}
 			}
 		}
+		System.out.println(currentUser);
+		System.out.println(users.size());
 		return login;
 	}
 
@@ -64,7 +75,6 @@ public class FoodApp {
 	public void cartInfo(int screen) { // se supone que pinta la info en la canasta
 		if (screen == 9) {
 
-			
 			;
 			for (int j = 0; j < cart.size(); j++) {
 				System.out.println("pinta info");
@@ -72,9 +82,8 @@ public class FoodApp {
 				app.text(cart.get(j).getName() + " " + cart.get(j).getPrice(), 30, j * 100 + 156);
 				app.text(cart.get(j).getName() + " " + cart.get(j).getPrice(), 30, j * 100 + 156);
 
-				
 			}
-			
+
 			// }
 		}
 
@@ -87,7 +96,7 @@ public class FoodApp {
 			id++;
 			history.add(new Order(id, totalPrice, app));
 			if (paintStatus = true) {
-			app.image(status,0,0);
+				app.image(status, 0, 0);
 			}
 
 			System.out.println(history.get(id - 1).getId() + " " + history.get(id - 1).getTotalPrice());
@@ -102,5 +111,13 @@ public class FoodApp {
 	public void setHistory(ArrayList<Order> history) {
 		this.history = history;
 	}
-	
+
+	public void registerUser(PApplet app2, String name, String lastname, String city, String address, String email,
+			String password) {
+		User u = new User(app2, name, lastname, city, address, email, password);
+		users.add(u);
+		System.out.println(users.size());
+
+	}
+
 }

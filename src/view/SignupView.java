@@ -97,10 +97,22 @@ public class SignupView {
 		int screen = 2;
 
 		if (app.mouseX > 94 && 282 > app.mouseX && app.mouseY > 669 && 707 > app.mouseY) {
+			registerUser();
 			screen = 1;
 		}
 
 		return screen;
+	}
+
+	private void registerUser() {
+		name = cp5.get(Textfield.class, "name").getText();
+		lastname = cp5.get(Textfield.class, "lastname").getText();
+		city = cp5.get(Textfield.class, "city").getText();
+		address = cp5.get(Textfield.class, "address").getText();
+		email = cp5.get(Textfield.class, "email").getText();
+		password = cp5.get(Textfield.class, "password").getText();
+		System.out.println(name + " " + lastname + " " + city + " " + address + " " + email + " " + password);
+		controllermain.registerUser(app,name,lastname,city,address,email,password);
 	}
 
 	public void hideCp5() {
@@ -119,7 +131,7 @@ public class SignupView {
 		cp5.get(Textfield.class, "address").setText("");
 		cp5.get(Textfield.class, "email").setText("");
 		cp5.get(Textfield.class, "password").setText("");
-		
+
 	}
 
 }

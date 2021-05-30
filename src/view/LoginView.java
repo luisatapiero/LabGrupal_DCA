@@ -18,12 +18,15 @@ public class LoginView {
 	private String[] inputs;
 	private String email;
 	private String password;
+	private boolean noLogin;
 
 	public LoginView(PApplet app) {
 		// TODO Auto-generated constructor stub
 		controllermain = new ControllerMain(app);
 		this.app = app;
 		controllermain.firstUser(app);
+
+		noLogin = false;
 
 		login_1 = app.loadImage("img/LogIn_1.png");
 		login_2 = app.loadImage("img/LogIn_2.png");
@@ -53,12 +56,16 @@ public class LoginView {
 
 	// método para pintar la pantalla de login
 	public void drawScreen() {
+		if (noLogin == false) {
+			if (app.mouseX > 105 && 635 > app.mouseX && app.mouseY > 635 && 673 > app.mouseY) {
+				app.image(login_2, 0, 0);
 
-		if (app.mouseX > 105 && 635 > app.mouseX && app.mouseY > 635 && 673 > app.mouseY) {
-			app.image(login_2, 0, 0);
+			} else {
+				app.image(login_1, 0, 0);
+			}
 
 		} else {
-			app.image(login_1, 0, 0);
+			app.image(login_notification, 0, 0);
 		}
 
 	}
@@ -66,23 +73,27 @@ public class LoginView {
 	// método para pasar de pantalla
 	public int switchScreen() {
 		int screen = 1;
+		if (noLogin == false) {
+			if (app.mouseX > 105 && 635 > app.mouseX && app.mouseY > 635 && 673 > app.mouseY) {
+				// screen = 3;
+				boolean capturelogin = login();
+				if (capturelogin == true) {
 
-		if (app.mouseX > 105 && 635 > app.mouseX && app.mouseY > 635 && 673 > app.mouseY) {
-			// screen = 3;
-			boolean capturelogin = login();
-			if (capturelogin == true) {
-
-				screen = 3;
-			} else {
-				// lanzar excepción
-				System.out.println("usuario no existe");
+					screen = 3;
+				} else {
+					noLogin = true;
+					System.out.println("usuario no existe");
+				}
 			}
+			if (app.mouseX > 212 && 248 > app.mouseX && app.mouseY > 686 && 702 > app.mouseY) {
+
+				screen = 2;
+
+			}
+		}else {
+			noLogin = false;
 		}
-		if (app.mouseX > 212 && 248 > app.mouseX && app.mouseY > 686 && 702 > app.mouseY) {
 
-			screen = 2;
-
-		} 
 		return screen;
 	}
 

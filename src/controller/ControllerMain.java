@@ -11,7 +11,7 @@ public class ControllerMain {
 
 	public ControllerMain(PApplet app) {
 
-		foodapp = new FoodApp(app);
+		foodapp = FoodApp.getInstance(app);
 	}
 
 	public void firstUser(PApplet app) {
@@ -42,6 +42,11 @@ public class ControllerMain {
     public void setHistory(ArrayList<Order> history) {
         //foodapp.setHistory(history);
     }
+
+	public void registerUser(PApplet app, String name, String lastname, String city, String address, String email,
+			String password) {
+foodapp.registerUser(app,name,lastname,city,address,email,password);
+	}
 	
 	
 
