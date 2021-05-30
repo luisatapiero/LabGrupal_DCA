@@ -30,7 +30,7 @@ public class Main extends PApplet {
 
 	public void setup() {
 
-		screen = 1;
+		screen = 3;
 		loginview = new LoginView(this);
 		signupview = new SignupView(this);
 		homeview = new HomeView(this);

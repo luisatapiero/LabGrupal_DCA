@@ -26,13 +26,14 @@ public class HistoryView {
 		switch (screen) {
 
 		case 10:
-
+			
 			app.image(history1, 0, 0);
 
-			for (int i = 0; i < orderView.getControllermain().getHistory().size(); i++) {
-				app.text(orderView.getControllermain().getHistory().get(i).getTotalPrice(), 30, 25 * i + 169);
-				app.text(orderView.getControllermain().getHistory().get(i).getDate().toString(), 60 + 30, 25 * i + 169);
-				app.text(orderView.getControllermain().getHistory().get(i).getId(), 281, 25 * i + 169);
+			for (int i = 0; i < controllermain.getHistory().size(); i++) {
+
+				app.text(controllermain.getHistory().get(i).getTotalPrice(), 30, 25 * i + 169);
+				app.text(controllermain.getHistory().get(i).getDate().toString(), 60 + 30, 25 * i + 169);
+				app.text(controllermain.getHistory().get(i).getId(), 281, 25 * i + 169);
 
 			}
 		}

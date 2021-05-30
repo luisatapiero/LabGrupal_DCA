@@ -32,9 +32,7 @@ public class ControllerMain {
 		foodapp.cartInfo(screen);
 	}
 	
-	/*public void processPayment(int screen) {
-		foodapp.processPayment(screen);
-	}*/
+
 	public ArrayList<Order> getHistory() {
         return foodapp.getHistory();
     }

@@ -9,7 +9,7 @@ import processing.core.PImage;
 public class OrderView {
 
 	private ControllerMain controllermain;
-	private PImage order1, order1_1, order2, order3, order4;
+	private PImage order1, order1_1, order2, order3, order4, order2_1, order3_1, order4_1;
 	private PImage status;
 	
 
@@ -45,6 +45,12 @@ public class OrderView {
 		name = "";
 		order1 = app.loadImage("Img/Order1.png");
 		order1_1 = app.loadImage("Img/Order1_1.png");
+		order2 = app.loadImage("Img/Order2.png");
+		order2_1 = app.loadImage("Img/Order2_1.png");
+		order3 = app.loadImage("Img/Order3.png");
+		order3_1 = app.loadImage("Img/Order3_1.png");
+		order4 = app.loadImage("Img/Order4.png");
+		order4_1 = app.loadImage("Img/Order4_1.png");
 		
 		order2 = app.loadImage("Img/Order2.png");
 		
@@ -100,21 +106,36 @@ public class OrderView {
 		case 6:
 			price = 14900;
 			name = "Hamburguesa Americana";
-			app.image(order2, 0, 0);
-					
+			
+			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
+				app.image(order2_1, 0, 0);
+			} else {
+				app.image(order2, 0, 0);
+			}		
 			break;
 					
 		case 7:
 			price = 42800;
 			name = "Combo Doble";
-			app.image(order3, 0, 0);
+			
+			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
+				app.image(order3_1, 0, 0);
+			} else {
+				app.image(order3, 0, 0);
+			}
 			break;
 			
 			
 		case 8:
 			price = 59900;
 			name = "Combo Triple";
-			app.image(order4, 0, 0);
+			
+			
+			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
+				app.image(order4_1, 0, 0);
+			} else {
+				app.image(order4, 0, 0);
+			}
 			break;
 			
 		case 9:

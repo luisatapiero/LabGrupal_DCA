@@ -35,8 +35,7 @@ public class FoodApp {
 		id = 0;
 		totalPrice = 0;
 		paintInfo = false;
-		
-		paintStatus = false;
+
 	}
 
 	public void firstUser(PApplet app) {
@@ -75,9 +74,7 @@ public class FoodApp {
 	public void cartInfo(int screen) { // se supone que pinta la info en la canasta
 		if (screen == 9) {
 
-			;
 			for (int j = 0; j < cart.size(); j++) {
-				System.out.println("pinta info");
 				app.fill(0);
 				app.text(cart.get(j).getName() + " " + cart.get(j).getPrice(), 30, j * 100 + 156);
 				app.text(cart.get(j).getName() + " " + cart.get(j).getPrice(), 30, j * 100 + 156);
@@ -95,13 +92,7 @@ public class FoodApp {
 
 			id++;
 			history.add(new Order(id, totalPrice, app));
-<<<<<<< HEAD
-			if (paintStatus = true) {
-				app.image(status, 0, 0);
-			}
 
-=======
->>>>>>> 707c6c607e37242fa5ee50504482df84694e4d6e
 			System.out.println(history.get(id - 1).getId() + " " + history.get(id - 1).getTotalPrice());
 			
 		}
