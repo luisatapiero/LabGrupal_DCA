@@ -1,6 +1,9 @@
 package controller;
 
+import java.util.ArrayList;
+
 import model.FoodApp;
+import model.Order;
 import processing.core.PApplet;
 
 public class ControllerMain {
@@ -32,7 +35,13 @@ public class ControllerMain {
 	/*public void processPayment(int screen) {
 		foodapp.processPayment(screen);
 	}*/
-	
+	public ArrayList<Order> getHistory() {
+        return foodapp.getHistory();
+    }
+
+    public void setHistory(ArrayList<Order> history) {
+        //foodapp.setHistory(history);
+    }
 	
 	
 

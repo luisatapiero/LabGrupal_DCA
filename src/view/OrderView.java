@@ -274,6 +274,13 @@ public class OrderView {
 		this.pressAcom4 = pressAcom4;
 	}
 	
+	public ControllerMain getControllermain() {
+        return controllermain;
+    }
+
+    public void setControllermain(ControllerMain controllermain) {
+        this.controllermain = controllermain;
+    }
 	
 	
 

@@ -87,4 +87,12 @@ public class FoodApp {
 
 	}
 
+	public ArrayList<Order> getHistory() {
+		return history;
+	}
+
+	public void setHistory(ArrayList<Order> history) {
+		this.history = history;
+	}
+	
 }

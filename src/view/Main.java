@@ -14,6 +14,7 @@ public class Main extends PApplet {
 	private OrderView orderview;
 	private PaymentView paymentview;
 	private ControllerMain controllermain;
+	private HistoryView history;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -37,7 +38,7 @@ public class Main extends PApplet {
 		orderview = new OrderView(this);
 		paymentview = new PaymentView(this);
 		controllermain = new ControllerMain (this);
-
+		history = new HistoryView(orderview,this);
 //	System.out.println(mouseX);	                     //para ver los valores de la posicion de los botones
 
 	}
@@ -90,10 +91,10 @@ public class Main extends PApplet {
 		}
 		fill(0);
 		text("x:" + mouseX + "y:" + mouseY, mouseX, mouseY);
+		history.drawHistory();
 	}
 
 	public void mousePressed() {
-
 		menu();
 
 		switch (screen) {
