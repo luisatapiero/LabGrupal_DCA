@@ -235,7 +235,7 @@ public class OrderView {
 	private void addDish(int screen) {
 		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
 			controllermain.addCart(name, price, screen);
-		}
+		} 
 			
 		
 	}

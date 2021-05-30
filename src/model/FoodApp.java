@@ -14,7 +14,7 @@ public class FoodApp {
 	private PApplet app;
 	private int id, totalPrice;
 	private boolean paintInfo;
-	private PImage status;
+	
 	private boolean paintStatus;
 
 	public FoodApp(PApplet app) {
@@ -27,7 +27,7 @@ public class FoodApp {
 		id = 0;
 		totalPrice = 0;
 		paintInfo = false;
-		status = app.loadImage("Img/Status.png");
+		
 		paintStatus = false;
 	}
 
@@ -54,7 +54,7 @@ public class FoodApp {
 			cart.add(new Dish(name, price));
 			System.out.println(name + " " + price);
 			totalPrice += price;
-		} else {
+		} else if (screen == 9){
 			processPayment(totalPrice, screen);
 			totalPrice = 0;
 		}
@@ -86,12 +86,8 @@ public class FoodApp {
 
 			id++;
 			history.add(new Order(id, totalPrice, app));
-			if (paintStatus = true) {
-
-			app.image(status,0,0);
-			}
-
 			System.out.println(history.get(id - 1).getId() + " " + history.get(id - 1).getTotalPrice());
+			
 		}
 
 	}
