@@ -94,6 +94,7 @@ public class FoodApp {
 			history.add(new Order(id, totalPrice, app));
 
 			System.out.println(history.get(id - 1).getId() + " " + history.get(id - 1).getTotalPrice());
+			cart.clear();
 			
 		}
 
