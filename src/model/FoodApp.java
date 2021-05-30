@@ -87,6 +87,7 @@ public class FoodApp {
 			id++;
 			history.add(new Order(id, totalPrice, app));
 			if (paintStatus = true) {
+
 			app.image(status,0,0);
 			}
 

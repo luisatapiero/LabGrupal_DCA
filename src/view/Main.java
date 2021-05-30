@@ -89,9 +89,9 @@ public class Main extends PApplet {
 		case 10:
 			history.drawHistory(screen);
 			break;
-			
 		case 11:
-			
+			history.drawHistory(screen);
+			break;
 
 		default:
 			break;
@@ -142,6 +142,12 @@ public class Main extends PApplet {
 			break;
 
 		case 9:
+
+			orderview.pressButtons(screen);
+
+			break;
+		
+		case 10:
 
 			orderview.pressButtons(screen);
 
