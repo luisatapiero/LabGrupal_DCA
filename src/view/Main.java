@@ -85,13 +85,17 @@ public class Main extends PApplet {
 			paymentview.drawScreen(screen);
 
 			break;
+			
+		case 10:
+			history.drawHistory(screen);
+			break;
 
 		default:
 			break;
 		}
 		fill(0);
 		text("x:" + mouseX + "y:" + mouseY, mouseX, mouseY);
-		history.drawHistory();
+		
 	}
 
 	public void mousePressed() {
@@ -139,6 +143,9 @@ public class Main extends PApplet {
 			orderview.pressButtons(screen);
 
 			break;
+			
+		
+			
 
 		default:
 			break;
@@ -166,6 +173,9 @@ public class Main extends PApplet {
 		if (mouseX > 174 && 204 > mouseX && mouseY > 767 && 794 > mouseY) {
 			screen = 9;
 		}
+		
+		if (mouseX > 266 && 287 > mouseX && mouseY > 768 && 793 > mouseY ) {
+			screen = 10;
+		}
 	}
-
 }

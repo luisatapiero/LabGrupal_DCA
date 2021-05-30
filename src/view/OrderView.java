@@ -10,6 +10,7 @@ public class OrderView {
 
 	private ControllerMain controllermain;
 	private PImage order1, order1_1, order2, order3, order4;
+	
 
 	private PImage adic1, adic1b, adic2, adic2b, adic3, adic3b, adic4, adic4b, acom1, acom1b, acom2, acom2b, acom3, acom3b, acom4, acom4b;
 	private PApplet app;
@@ -73,6 +74,8 @@ public class OrderView {
 
 		acom4 = app.loadImage("Img/buttons/Acom4.png");
 		acom4b = app.loadImage("Img/buttons/Acom4b.png");
+		
+		
 
 	}
 
