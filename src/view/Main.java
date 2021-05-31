@@ -152,7 +152,7 @@ public class Main extends PApplet {
 		case 10:
 			
 			orderview.pressButtons(screen);
-			
+			history.clickBottons(screen);
 
 			break;
 			

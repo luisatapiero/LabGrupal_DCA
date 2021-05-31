@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import model.FoodApp;
 import model.Order;
@@ -33,7 +34,7 @@ public class ControllerMain {
 	}
 	
 
-	public ArrayList<Order> getHistory() {
+	public LinkedList<Order> getHistory() {
         return foodapp.getHistory();
     }
 

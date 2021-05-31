@@ -39,9 +39,8 @@ public class HistoryView {
 		}
 	}
 	
-	public void cliclBottons(int screen) {
-		if (screen == 10){
+	public void clickBottons(int screen) {
 			controllermain.sortHistory(screen);
-		}
+			drawHistory(screen);
 	}
 }

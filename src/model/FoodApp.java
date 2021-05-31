@@ -11,7 +11,7 @@ import processing.core.PImage;
 public class FoodApp {
 	private ArrayList<User> users;
 	private ArrayList<Dish> cart;
-	private ArrayList<Order> history;
+	private LinkedList <Order> history;
 	private int currentUser;
 	private PApplet app;
 	private int id, totalPrice;
@@ -34,7 +34,7 @@ public class FoodApp {
 		// TODO Auto-generated constructor stub
 		users = new ArrayList<User>();
 		cart = new ArrayList<Dish>();
-		history = new ArrayList<Order>();
+		history = new LinkedList<Order>();
 		currentUser = 0;
 		this.app = app;
 		id = 0;
@@ -42,7 +42,8 @@ public class FoodApp {
 		paintInfo = false;
 		listOrder = new LinkedList<Order>();
 		orderValueCompare = new OrderValueCompare();
-
+		
+		//istOrder = 
 	}
 
 	public void firstUser(PApplet app) {
@@ -67,7 +68,7 @@ public class FoodApp {
 	}
 
 	public void addCart(String name, int price, int screen) {
-		if (screen != 9) {
+		if (screen == 5 || screen == 6 || screen == 7 || screen == 8) {
 			cart.add(new Dish(name, price));
 			System.out.println(name + " " + price);
 			totalPrice += price;
@@ -99,7 +100,6 @@ public class FoodApp {
 
 			id++;
 			history.add(new Order(id, totalPrice, app));
-
 			System.out.println(history.get(id - 1).getId() + " " + history.get(id - 1).getTotalPrice());
 			cart.clear();
 			
@@ -107,11 +107,11 @@ public class FoodApp {
 
 	}
 
-	public ArrayList<Order> getHistory() {
+	public LinkedList<Order> getHistory() {
 		return history;
 	}
 
-	public void setHistory(ArrayList<Order> history) {
+	public void setHistory(LinkedList<Order> history) {
 		this.history = history;
 	}
 
@@ -123,16 +123,25 @@ public class FoodApp {
 
 	}
 	
+
 	public void sortHistory(int screen) {
-		if (app.mouseX > 20 && 158 > app.mouseX && app.mouseY > 676 && 723 > app.mouseY) {
-			Collections.sort(listOrder);
-			System.out.println("Esta Ordenado");
+		if (screen == 10) {
+			if (app.mouseX > 20 && 158 > app.mouseX && app.mouseY > 676 && 723 > app.mouseY) {
+				Collections.sort(history);
+				//System.out.println();
+				
+			
+			}
+			//Ayudame Dios tengo sueño
+			if(app.mouseX > 212 && 359 > app.mouseX && app.mouseY > 675 && 722 > app.mouseY) {
+				Collections.sort(history, orderValueCompare);
+				System.out.println("ordena por total");
+				//System.out.println(listOrder.getFirst());
+			}
+		}
 		
-		}
-		//Ayudame Dios tengo sueño
-		if(app.mouseX > 214 && 346 > app.mouseX && app.mouseY > 677 && 722 > app.mouseY) {
-			Collections.sort(listOrder, orderValueCompare);
-		}
 	}
+
+
 
 }
