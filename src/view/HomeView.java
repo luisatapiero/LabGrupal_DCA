@@ -38,7 +38,7 @@ public class HomeView {
 	// método para pasar de pantalla
 	public int switchScreen() {
 		int screen = 3;
-
+		
 		if (app.mouseX > 34 && 346 > app.mouseX && app.mouseY > 146 && 282 > app.mouseY) {
 			screen = 4;
 		} 

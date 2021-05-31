@@ -65,6 +65,7 @@ public class Main extends PApplet {
 			loginview.hideCp5();
 			signupview.hideCp5();
 			clearAdditions();
+			//Imagen de cerrar sesion
 			image(leave,24,11,25,25);
 			
 			break;
@@ -123,6 +124,7 @@ public class Main extends PApplet {
 			break;
 		case 3:
 			screen = homeview.switchScreen();
+			
 			break;
 		case 4:
 			screen = dishview.switchScreen(screen);
@@ -185,6 +187,10 @@ public class Main extends PApplet {
 		if (mouseX > 88 && 113 > mouseX && mouseY > 768 && 791 > mouseY) { // esta parte permite que al seleccional el
 			// icono de home se pueda regresar a esa
 			// pantalla
+			
+			if (mouseX > 24 && 50 > mouseX && mouseY > 11 && 35 > mouseY) {
+			System.out.println("te saliste");
+			}
 			screen = 3;
 		}
 
