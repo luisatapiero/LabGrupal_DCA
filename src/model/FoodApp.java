@@ -72,6 +72,7 @@ public class FoodApp {
 			cart.add(new Dish(name, price));
 			System.out.println(name + " " + price);
 			totalPrice += price;
+			
 		} else if (screen == 9){
 			processPayment(totalPrice, screen);
 			totalPrice = 0;

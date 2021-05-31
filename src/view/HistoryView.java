@@ -10,6 +10,8 @@ public class HistoryView {
 	OrderView orderView;
 	private ControllerMain controllermain;
 	private PImage history1;
+	private PImage history1_1;
+	private PImage history1_2;
 	private PFont montserrat;
 
 	public HistoryView(OrderView orderView, PApplet app) {
@@ -17,6 +19,8 @@ public class HistoryView {
 		this.orderView = orderView;
 		controllermain = new ControllerMain(app);
 		history1 = app.loadImage("Img/History.png");
+		history1_1 = app.loadImage("Img/history1_1.png");
+		history1_2 = app.loadImage("Img/history1_2.png");
 		montserrat = app.createFont("Fonts/Montserrat-Regular.ttf", 14);
 
 	}
@@ -26,8 +30,14 @@ public class HistoryView {
 		switch (screen) {
 
 		case 10:
+			if (app.mouseX > 20 && 158 > app.mouseX && app.mouseY > 676 && 723 > app.mouseY) {
+				app.image(history1_1, 0, 0);
+			}else if(app.mouseX > 212 && 359 > app.mouseX && app.mouseY > 675 && 722 > app.mouseY) {
+				app.image(history1_2, 0, 0);
+			}else {
+				app.image(history1, 0, 0);
+			}
 			
-			app.image(history1, 0, 0);
 
 			for (int i = 0; i < controllermain.getHistory().size(); i++) {
 

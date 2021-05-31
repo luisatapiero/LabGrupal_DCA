@@ -23,6 +23,8 @@ public class OrderView {
 	private boolean pressAcom2;
 	private boolean pressAcom3;
 	private boolean pressAcom4;
+	
+	private boolean change;
 
 	private String name;
 	private int price;
@@ -40,6 +42,7 @@ public class OrderView {
 		pressAcom2 = false;
 		pressAcom3 = false;
 		pressAcom4 = false;
+		change = false;
 
 		price = 0;
 		name = "";
@@ -91,6 +94,7 @@ public class OrderView {
 		switch (screen) {
 
 		case 5:
+			change = false;
 			name = "Hamburguesa Clásica";
 			price = 12900;
 			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
@@ -102,6 +106,7 @@ public class OrderView {
 			break;
 
 		case 6:
+			change = false;
 			price = 14900;
 			name = "Hamburguesa Americana";
 
@@ -113,6 +118,7 @@ public class OrderView {
 			break;
 
 		case 7:
+			change = false;
 			price = 42800;
 			name = "Combo Doble";
 
@@ -124,6 +130,7 @@ public class OrderView {
 			break;
 
 		case 8:
+			change = false;
 			price = 59900;
 			name = "Combo Triple";
 
@@ -135,8 +142,7 @@ public class OrderView {
 			break;
 
 		case 9:
-			// controllermain.cartInfo(screen);
-			// app.image(order4, 0, 0);
+		
 
 			break;
 
@@ -152,7 +158,16 @@ public class OrderView {
 		pressAdditions();
 		pressAcom();
 		addDish(screen);
+		
 
+	}
+	
+	public int changeScreenAdd(int screen) {
+		if (change) {
+			screen = 4;
+		}
+		change = false;
+		return screen;
 	}
 
 	private void pressAdditions() {
@@ -244,8 +259,9 @@ public class OrderView {
 	private void addDish(int screen) {
 		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
 			controllermain.addCart(name, price, screen);
+			change = true;
 		}
-
+		
 	}
 
 	public void setPressAdic1(boolean pressAdic1) {

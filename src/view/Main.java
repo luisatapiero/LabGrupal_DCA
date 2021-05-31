@@ -37,8 +37,8 @@ public class Main extends PApplet {
 		dishview = new DishView(this);
 		orderview = new OrderView(this);
 		paymentview = new PaymentView(this);
-		controllermain = new ControllerMain (this);
-		history = new HistoryView(orderview,this);
+		controllermain = new ControllerMain(this);
+		history = new HistoryView(orderview, this);
 //	System.out.println(mouseX);	                     //para ver los valores de la posicion de los botones
 
 	}
@@ -62,8 +62,10 @@ public class Main extends PApplet {
 			loginview.hideCp5();
 			signupview.hideCp5();
 			clearAdditions();
+			
 			break;
 		case 4:
+			clearAdditions();
 			dishview.drawScreen();
 			break;
 		case 5:
@@ -85,7 +87,7 @@ public class Main extends PApplet {
 			paymentview.drawScreen(screen);
 
 			break;
-			
+
 		case 10:
 			history.drawHistory(screen);
 			break;
@@ -98,7 +100,7 @@ public class Main extends PApplet {
 		}
 		fill(0);
 		text("x:" + mouseX + "y:" + mouseY, mouseX, mouseY);
-		
+
 	}
 
 	public void mousePressed() {
@@ -123,41 +125,41 @@ public class Main extends PApplet {
 			break;
 		case 5:
 			orderview.pressButtons(screen);
+			screen = orderview.changeScreenAdd(screen);
 			break;
 		case 6:
 
 			orderview.pressButtons(screen);
+			screen = orderview.changeScreenAdd(screen);
+			
 			break;
 
 		case 7:
 
 			orderview.pressButtons(screen);
+			screen = orderview.changeScreenAdd(screen);
 
 			break;
 
 		case 8:
 
 			orderview.pressButtons(screen);
+			screen = orderview.changeScreenAdd(screen); 
 
 			break;
 
 		case 9:
 			orderview.pressButtons(screen);
 			screen = paymentview.switchScreen(screen);
-			
-			
 
 			break;
-		
+
 		case 10:
-			
+
 			orderview.pressButtons(screen);
 			history.clickBottons(screen);
 
 			break;
-			
-		
-			
 
 		default:
 			break;
@@ -185,8 +187,8 @@ public class Main extends PApplet {
 		if (mouseX > 174 && 204 > mouseX && mouseY > 767 && 794 > mouseY) {
 			screen = 9;
 		}
-		
-		if (mouseX > 266 && 287 > mouseX && mouseY > 768 && 793 > mouseY ) {
+
+		if (mouseX > 266 && 287 > mouseX && mouseY > 768 && 793 > mouseY) {
 			screen = 10;
 		}
 	}
