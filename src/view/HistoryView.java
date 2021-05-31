@@ -26,31 +26,31 @@ public class HistoryView {
 	}
 
 	public void drawHistory(int screen) {
-
+		app.textFont(montserrat);
+		app.fill(0);
 		switch (screen) {
 
 		case 10:
 			if (app.mouseX > 20 && 158 > app.mouseX && app.mouseY > 676 && 723 > app.mouseY) {
 				app.image(history1_1, 0, 0);
-			}else if(app.mouseX > 212 && 359 > app.mouseX && app.mouseY > 675 && 722 > app.mouseY) {
+			} else if (app.mouseX > 212 && 359 > app.mouseX && app.mouseY > 675 && 722 > app.mouseY) {
 				app.image(history1_2, 0, 0);
-			}else {
+			} else {
 				app.image(history1, 0, 0);
 			}
-			
 
 			for (int i = 0; i < controllermain.getHistory().size(); i++) {
 
-				app.text(controllermain.getHistory().get(i).getTotalPrice(), 30, 25 * i + 169);
-				app.text(controllermain.getHistory().get(i).getDate().toString(), 60 + 30, 25 * i + 169);
-				app.text(controllermain.getHistory().get(i).getId(), 281, 25 * i + 169);
+				app.text("$ " + controllermain.getHistory().get(i).getTotalPrice(), 281, 25 * i + 169);
+				app.text(controllermain.getHistory().get(i).getDate().toString(), 60, 25 * i + 169);
+				app.text(controllermain.getHistory().get(i).getId(), 38, 25 * i + 169);
 
 			}
 		}
 	}
-	
+
 	public void clickBottons(int screen) {
-			controllermain.sortHistory(screen);
-			drawHistory(screen);
+		controllermain.sortHistory(screen);
+		drawHistory(screen);
 	}
 }

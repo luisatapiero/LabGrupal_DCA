@@ -1,10 +1,13 @@
 package model;
 
+import java.util.LinkedList;
+
 import processing.core.PApplet;
 
 public class User {
 	private PApplet app;
 	private String name, lastname, city, address, email, password;
+
 	//crear arraylist de historial de pedidos
 
 	public User(PApplet app, String name, String lastname, String city, String address, String email, String password) {
@@ -16,6 +19,7 @@ public class User {
 		this.address = address;
 		this.email = email;
 		this.password = password;
+
 	}
 
 	public PApplet getApp() {

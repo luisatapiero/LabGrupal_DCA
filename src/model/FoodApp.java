@@ -6,21 +6,23 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 import processing.core.PApplet;
+import processing.core.PFont;
 import processing.core.PImage;
 
 public class FoodApp {
 	private ArrayList<User> users;
 	private ArrayList<Dish> cart;
-	private LinkedList <Order> history;
+	private LinkedList<Order> history;
 	private int currentUser;
 	private PApplet app;
 	private int id, totalPrice;
 	private boolean paintInfo;
-	
+	private PFont montserratBold;
+
 	private boolean paintStatus;
 	private static FoodApp foodapp;
-	
-	private LinkedList<Order> listOrder;
+
+	//private LinkedList<Order> listOrder;
 	private OrderValueCompare orderValueCompare;
 
 	public static FoodApp getInstance(PApplet app) {
@@ -40,10 +42,10 @@ public class FoodApp {
 		id = 0;
 		totalPrice = 0;
 		paintInfo = false;
-		listOrder = new LinkedList<Order>();
+		//listOrder = new LinkedList<Order>();
 		orderValueCompare = new OrderValueCompare();
-		
-		//istOrder = 
+		montserratBold = app.createFont("Fonts/MONTSERRAT-BOLD.TTF", 18);
+
 	}
 
 	public void firstUser(PApplet app) {
@@ -72,8 +74,8 @@ public class FoodApp {
 			cart.add(new Dish(name, price));
 			System.out.println(name + " " + price);
 			totalPrice += price;
-			
-		} else if (screen == 9){
+
+		} else if (screen == 9) {
 			processPayment(totalPrice, screen);
 			totalPrice = 0;
 		}
@@ -86,9 +88,15 @@ public class FoodApp {
 			for (int j = 0; j < cart.size(); j++) {
 				app.fill(0);
 				app.text(cart.get(j).getName() + "    $ " + cart.get(j).getPrice(), 30, j * 20 + 176);
-				//app.text(cart.get(j).getName() + "    $ " + cart.get(j).getPrice(), 30, j * 20 + 176);
+
+				// app.text(cart.get(j).getName() + " $ " + cart.get(j).getPrice(), 30, j * 20 +
+				// 176);
 
 			}
+
+			app.fill(242, 23, 28);
+			app.textFont(montserratBold);
+			app.text("Total: $ " + totalPrice, 110, 630);
 
 			// }
 		}
@@ -97,13 +105,13 @@ public class FoodApp {
 
 	public void processPayment(int totalPrice, int screen) { // cuando le da pagar se guarda la orden
 
-		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
+		if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY && totalPrice != 0) {
 
 			id++;
 			history.add(new Order(id, totalPrice, app));
 			System.out.println(history.get(id - 1).getId() + " " + history.get(id - 1).getTotalPrice());
 			cart.clear();
-			
+
 		}
 
 	}
@@ -123,26 +131,22 @@ public class FoodApp {
 		System.out.println(users.size());
 
 	}
-	
 
 	public void sortHistory(int screen) {
 		if (screen == 10) {
 			if (app.mouseX > 20 && 158 > app.mouseX && app.mouseY > 676 && 723 > app.mouseY) {
 				Collections.sort(history);
-				//System.out.println();
-				
-			
+				// System.out.println();
+
 			}
-			//Ayudame Dios tengo sueño
-			if(app.mouseX > 212 && 359 > app.mouseX && app.mouseY > 675 && 722 > app.mouseY) {
+			// Ayudame Dios tengo sueño
+			if (app.mouseX > 212 && 359 > app.mouseX && app.mouseY > 675 && 722 > app.mouseY) {
 				Collections.sort(history, orderValueCompare);
 				System.out.println("ordena por total");
-				//System.out.println(listOrder.getFirst());
+
 			}
 		}
-		
+
 	}
-
-
 
 }

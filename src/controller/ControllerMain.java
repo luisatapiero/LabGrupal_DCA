@@ -38,8 +38,8 @@ public class ControllerMain {
         return foodapp.getHistory();
     }
 
-    public void setHistory(ArrayList<Order> history) {
-        //foodapp.setHistory(history);
+    public void setHistory(LinkedList<Order> history) {
+        foodapp.setHistory(history);
     }
 
 	public void registerUser(PApplet app, String name, String lastname, String city, String address, String email,
