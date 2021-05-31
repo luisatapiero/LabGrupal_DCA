@@ -9,7 +9,7 @@ public class PaymentView {
 
 	private ControllerMain controllermain;
 	private PApplet app;
-	private PImage canasta;
+	private PImage canasta, canasta2;
 	private PImage status;
 	private PFont montserrat;
 
@@ -19,6 +19,7 @@ public class PaymentView {
 
 		montserrat = app.createFont("Fonts/Montserrat-Regular.ttf", 14);
 		canasta = app.loadImage("Img/Canasta.png");
+		canasta2 = app.loadImage("Img/Canasta2.png");
 		status = app.loadImage("Img/Status.png");
 	}
 
@@ -27,7 +28,13 @@ public class PaymentView {
 		switch (screen) {
 		case 9:
 			app.textFont(montserrat);
-			app.image(canasta, 0, 0);
+			
+			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
+				app.image(canasta2, 0, 0);
+			} else {
+				app.image(canasta, 0, 0);
+			}
+			
 			controllermain.cartInfo(screen);
 			break;
 		case 11:
