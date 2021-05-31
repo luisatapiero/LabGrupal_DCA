@@ -3,6 +3,7 @@ package view;
 import controlP5.ControlP5;
 import controller.ControllerMain;
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Main extends PApplet {
 
@@ -15,6 +16,7 @@ public class Main extends PApplet {
 	private PaymentView paymentview;
 	private ControllerMain controllermain;
 	private HistoryView history;
+	private PImage leave;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -39,6 +41,7 @@ public class Main extends PApplet {
 		paymentview = new PaymentView(this);
 		controllermain = new ControllerMain(this);
 		history = new HistoryView(orderview, this);
+		leave = loadImage("Img/Leave_Mesa de trabajo 1.png");
 //	System.out.println(mouseX);	                     //para ver los valores de la posicion de los botones
 
 	}
@@ -62,6 +65,7 @@ public class Main extends PApplet {
 			loginview.hideCp5();
 			signupview.hideCp5();
 			clearAdditions();
+			image(leave,24,11,25,25);
 			
 			break;
 		case 4:
