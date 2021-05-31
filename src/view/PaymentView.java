@@ -28,13 +28,13 @@ public class PaymentView {
 		switch (screen) {
 		case 9:
 			app.textFont(montserrat);
-			
+
 			if (app.mouseX > 27 && 348 > app.mouseX && app.mouseY > 675 && 723 > app.mouseY) {
 				app.image(canasta2, 0, 0);
 			} else {
 				app.image(canasta, 0, 0);
 			}
-			
+
 			controllermain.cartInfo(screen);
 			break;
 		case 11:

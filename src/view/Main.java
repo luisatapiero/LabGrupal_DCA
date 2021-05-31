@@ -20,7 +20,6 @@ public class Main extends PApplet {
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
-		// TODO Auto-generated method stub
 
 		// Login completo
 	}
@@ -41,8 +40,7 @@ public class Main extends PApplet {
 		paymentview = new PaymentView(this);
 		controllermain = new ControllerMain(this);
 		history = new HistoryView(orderview, this);
-		leave = loadImage("Img/Leave_Mesa de trabajo 1.png");
-//	System.out.println(mouseX);	                     //para ver los valores de la posicion de los botones
+		leave = loadImage("Img/orderStatus.png");
 
 	}
 
@@ -65,9 +63,9 @@ public class Main extends PApplet {
 			loginview.hideCp5();
 			signupview.hideCp5();
 			clearAdditions();
-			//Imagen de cerrar sesion
-			image(leave,24,11,25,25);
-			
+			// Imagen de cerrar sesion
+			image(leave, 24, 11, 25, 25);
+
 			break;
 		case 4:
 			clearAdditions();
@@ -122,7 +120,7 @@ public class Main extends PApplet {
 			break;
 		case 3:
 			screen = homeview.switchScreen();
-			
+
 			break;
 		case 4:
 			screen = dishview.switchScreen(screen);
@@ -135,7 +133,7 @@ public class Main extends PApplet {
 
 			orderview.pressButtons(screen);
 			screen = orderview.changeScreenAdd(screen);
-			
+
 			break;
 
 		case 7:
@@ -148,7 +146,7 @@ public class Main extends PApplet {
 		case 8:
 
 			orderview.pressButtons(screen);
-			screen = orderview.changeScreenAdd(screen); 
+			screen = orderview.changeScreenAdd(screen);
 
 			break;
 
@@ -186,18 +184,16 @@ public class Main extends PApplet {
 			// icono de home se pueda regresar a esa
 			// pantalla
 			screen = 3;
-			
+
 		}
-		
+
 		if (mouseX > 24 && 50 > mouseX && mouseY > 11 && 35 > mouseY && screen == 3) {
 			System.out.println("te saliste");
 			screen = 1;
 			for (int i = 0; i < controllermain.getHistory().size(); i++) {
 				controllermain.getHistory().clear();
 			}
-			
-			}
-			
+		}
 
 		if (mouseX > 174 && 204 > mouseX && mouseY > 767 && 794 > mouseY) {
 			screen = 9;

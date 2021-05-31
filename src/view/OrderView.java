@@ -15,15 +15,7 @@ public class OrderView {
 	private PImage adic1, adic1b, adic2, adic2b, adic3, adic3b, adic4, adic4b, acom1, acom1b, acom2, acom2b, acom3,
 			acom3b, acom4, acom4b;
 	private PApplet app;
-	private boolean pressAdic1;
-	private boolean pressAdic2;
-	private boolean pressAdic3;
-	private boolean pressAdic4;
-	private boolean pressAcom1;
-	private boolean pressAcom2;
-	private boolean pressAcom3;
-	private boolean pressAcom4;
-	
+	private boolean pressAdic1,pressAdic2,pressAdic3,pressAdic4,pressAcom1,pressAcom2,pressAcom3,pressAcom4;
 	private boolean change;
 
 	private String name;
